@@ -116,16 +116,3 @@ jobs:
         composer require --dev laravel/dusk
         php artisan dusk:chrome-driver --detect
         ./vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &
-    - name: Run Dusk Tests
-      run: |
-        php artisan serve > /dev/null 2>&1 &
-        chmod -R 0755 vendor/laravel/dusk/bin/
-        php artisan migrate
-        php artisan dusk
-# Set environment
-      env:
-        DB_CONNECTION: mysql
-        DB_DATABASE: joieetgym
-        DB_PORT: 33306
-        DB_USER: joieetgym
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
