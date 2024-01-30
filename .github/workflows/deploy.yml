@@ -25,14 +25,6 @@ jobs:
           --health-timeout=5s
           --health-retries=3
 
-    strategy:
-      matrix:
-        operating-system: [linux]
-        php-versions: [ '8.2' ]
-        dependency-stability: [ 'prefer-stable' ]
-
-    name: P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}
-
     steps:
     - uses: actions/checkout@v3
       with:
@@ -40,11 +32,6 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 1
-
-    - name: Install PHP versions
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php-versions }}
 
     - name: Get Composer Cache Directory 2
       id: composer-cache
@@ -85,9 +72,9 @@ jobs:
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: mysql
-        DB_DATABASE: joieetgym
+        DB_DATABASE: joieEtGym
         DB_PORT: 33306
-        DB_USER: root
+        DB_USER: joieetgym
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: vendor/bin/phpunit --testdox
     - uses: symfonycorp/security-checker-action@v4
