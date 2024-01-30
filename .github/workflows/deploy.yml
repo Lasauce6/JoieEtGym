@@ -61,7 +61,9 @@ jobs:
 
     - name: Prepare Laravel Application
       run: |
-        rm .env
+        if [ -e .env ]; then
+          rm .env
+        fi
         echo "${{ secrets.ENV_FILE }}" > .env
         php artisan key:generate
         php artisan storage:link
