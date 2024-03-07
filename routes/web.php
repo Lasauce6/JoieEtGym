@@ -3,7 +3,6 @@
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use TCG\Voyager\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +38,5 @@ Route::middleware(['throttle:global', 'auth'])->group(function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['throttle:global', 'admin']], function () {
-    (new Voyager)->routes();
+    Voyager::routes();
 });
