@@ -40,6 +40,15 @@
             window.scrollTo({top: 0, behaviour: 'smooth'});
         }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPRDGGFWD9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YPRDGGFWD9');
+    </script>
     @yield('scripts')
 </body>
 </html>
