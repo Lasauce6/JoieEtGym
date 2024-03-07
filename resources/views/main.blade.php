@@ -33,18 +33,11 @@
 
         function scroll1() {
             const toTop = document.getElementById('toTop');
-            window.scrollY > 0 ? toTop.style.display = 'Block' : toTop.style.display = 'none';
+            window.scrollY > 500 ? toTop.style.display = 'Block' : toTop.style.display = 'none';
         }
 
         function scrollToTop() {
-            let y1 = window.scrollY;
-            y1 = y1 - 1000;
-            window.scrollTo(0, y1);
-            if (y1 > 0) {
-                t1 = setTimeout("scrollToTop()", 100);
-            } else {
-                clearTimeout(t1);
-            }
+            window.scrollTo({top: 0, behaviour: 'smooth'});
         }
     </script>
     @yield('scripts')
