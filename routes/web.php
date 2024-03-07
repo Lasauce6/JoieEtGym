@@ -29,11 +29,11 @@ Route::middleware(['throttle:global'])->group(function () {
 });
 
 Route::middleware(['throttle:login'])->group(function () {
-    Route::post('/login', [MainController::class, 'postLogin'])->name('login');
+    Route::post('/login', [MainController::class, 'postLogin']);
 });
 
 Route::middleware(['throttle:global', 'auth'])->group(function () {
-//    Route::get('/profile', [MainController::class, 'profile'])->name('profile');
+    Route::get('/profile', [MainController::class, 'profile'])->name('profile');
     Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 });
 
