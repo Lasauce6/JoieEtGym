@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Register')
+@section('title', 'Register')
 
 @section('content')
 

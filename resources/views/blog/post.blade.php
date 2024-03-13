@@ -1,6 +1,6 @@
 @extends('main')
 
-@php($title = 'Joie et Gym | Post - ' . $post->title)
+@php($title = 'Post - ' . $post->title)
 
 @section('title', $title)
 

@@ -25,6 +25,7 @@ Route::middleware(['throttle:global'])->group(function () {
     Route::get('/inscription', [MainController::class, 'inscription'])->name('inscription');
     Route::get('/register', [MainController::class, 'register'])->name('register');
     Route::get('/login', [MainController::class, 'login'])->name('login');
+    Route::view('/legals', 'legals')->name('legals');
     Route::view('/404', 'errors.404')->name('404');
 });
 
