@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Sitemap\Contracts\Sitemapable;
+use Spatie\Sitemap\Tags\Url;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Resizable;
 use TCG\Voyager\Traits\Translatable;
 
-class BlogPost extends Model
+class BlogPost extends Model implements Sitemapable
 {
     use Translatable,
         Resizable;
@@ -56,5 +58,14 @@ class BlogPost extends Model
     public function categoryId()
     {
         return $this->belongsTo(Voyager::modelClass('Category'));
+    }
+
+    public function toSitemapTag(): Url|string|array
+    {
+        return Url::create('/news/' . $this->category->slug . '/' . $this->slug)
+            ->setLastModificationDate($this->updated_at)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+            ->setPriority(0.8);
+
     }
 }

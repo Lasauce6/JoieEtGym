@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -11,7 +10,8 @@ use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Spatie\Sitemap\SitemapGenerator;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class MainController extends Controller
 {
@@ -145,5 +145,11 @@ class MainController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('index');
+    }
+
+    public function sitemap(): BinaryFileResponse
+    {
+        SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));
+        return response()->file(public_path('sitemap.xml'));
     }
 }
