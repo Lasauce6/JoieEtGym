@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Planning')
+@section('title', 'Planning')
 
 @section('content')
     <div class="container-md mt-5">

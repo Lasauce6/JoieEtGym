@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Administration')
+@section('title', 'Administration')
 
 @section('content')
     <div class="container my-5">

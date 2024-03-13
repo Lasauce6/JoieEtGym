@@ -3,10 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
+    <title>@yield('title') | Joie et Gymnastique au Val d'Yerres</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('/assets/css/custom.css') }}" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ asset('/assets/images/logob.png') }}">
+
+    <meta name="description" content="Joie et Gymnastique au Val d'Yerres est une association sportive de gymnastique artistique féminine et masculine.">
+    <meta name="keywords" content="gymnastique, artistique, féminine, masculine, val d'yerres, brunoy, association, sportive">
+    <meta name="author" content="Raphaël Baticle">
+    <meta name="robots" content="index, follow">
+
+    {{--  Icons  --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
+
     <script src="https://kit.fontawesome.com/208dc95b1d.js" crossorigin="anonymous"></script>
 
 </head>
