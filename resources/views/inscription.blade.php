@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Inscription')
+@section('title', 'Inscription')
 
 @section('content')
     <div class="container mt-5">
@@ -24,6 +24,12 @@
                     </p>
                     <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/couvtripti23246.pdf') }}"></iframe>
+                    </div>
+                    <p class="mt-4 text-muted text-center fs-6">
+                        Questionnaire de santé
+                    </p>
+                    <div class="embed-responsive mx-5">
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Questionnaire-2023-2024.pdf') }}"></iframe>
                     </div>
                 </div>
             </div>

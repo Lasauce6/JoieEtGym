@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Page introuvable')
+@section('title', 'Page introuvable')
 
 @section('content')
     <div class="container-sm custom-container mt-5 px-4">
