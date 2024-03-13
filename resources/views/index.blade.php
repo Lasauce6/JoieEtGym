@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Joie et Gym | Accueil')
+@section('title', 'Accueil')
 
 @section('content')
     <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -16,7 +16,7 @@
 {{--                            <a href="#" class="btn btn-primary">En savoir plus</a>--}}
                         </div>
                         <div class="col d-flex justify-content-center">
-                            <img src="{{ asset('/assets/images/carousel/1.png') }}" class="d-block" alt="Logo Joie et Gym" height="396" width="396">
+                            <img src="{{ asset('/assets/images/carousel/1.png') }}" class="d-block m-5" alt="Logo Joie et Gym" height="300" width="298">
                         </div>
                     </div>
                 </div>
@@ -81,6 +81,13 @@
             Du lundi au samedi midi durant l'année scolaire, en journée, mais également en soirée, pour répondre aux besoins de celles et ceux qui travaillent, vous pouvez garder la forme grâce au sport.</p>
             <p>10 Animateurs proposent à nos 350 adhérents. Résidant ou non dans le Val d'Yerres, des cours variés, correspondants aux attentes de chacun, dans une ambiance chaleureuse.</p>
         </div>
+
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col d-flex justify-content-center align-items-center">
+                <img src="{{ asset('/assets/images/logo_epgv.png') }}" class="d-block mx-auto" alt="Logo Sport et santé" height="250" width="432">
+            </div>
+        </div>
+
         <div class="row align-items-center justify-content-center mt-5">
             <div class="col d-flex justify-content-center align-items-center">
                 <a href="https://www.ville-epinay-senart.fr/" target="_blank">

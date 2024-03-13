@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon" data-bs-target="#navbarNav"></span>
         </button>
         <a href="{{ route('index') }}" class="d-flex align-items-center mb-lg-0 text-white text-decoration-none" id="logo">
-            <img src="{{ asset('/assets/images/logon.png') }}" width="80" height="80" alt="Logo Joie et Gym">
+            <img src="{{ asset('/assets/images/logo.png') }}" width="80" height="79" alt="Logo Joie et Gym">
         </a>
         <div class="offcanvas offcanvas-start offcanvas-size-sm" data-bs-scroll="true" tabindex="-1" id="navbarNav">
             <div class="offcanvas-header">

@@ -1,8 +1,6 @@
 @extends('main')
 
-@php($title = 'Joie et Gym | ' . $seo['seo_title'])
-
-@section('title', $title)
+@section('title', $seo['seo_title'])
 
 @section('content')
     <div class="container mt-5">
