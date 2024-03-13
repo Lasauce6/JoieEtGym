@@ -27,6 +27,7 @@ Route::middleware(['throttle:global'])->group(function () {
     Route::get('/login', [MainController::class, 'login'])->name('login');
     Route::view('/legals', 'legals')->name('legals');
     Route::view('/404', 'errors.404')->name('404');
+    Route::get('/sitemap' , [MainController::class, 'sitemap'])->name('sitemap');
 });
 
 Route::middleware(['throttle:login'])->group(function () {
@@ -34,7 +35,7 @@ Route::middleware(['throttle:login'])->group(function () {
 });
 
 Route::middleware(['throttle:global', 'auth'])->group(function () {
-    Route::get('/profile', [MainController::class, 'profile'])->name('profile');
+//    Route::get('/profile', [MainController::class, 'profile'])->name('profile');
     Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 });
 

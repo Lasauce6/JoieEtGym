@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "pvtl/voyager-blog": "^0.2.10",
+        "spatie/laravel-sitemap": "^6.4",
         "tcg/voyager": "^1.6"
     },
     "require-dev": {
