@@ -21,7 +21,7 @@ class BuildSitemap
             ->add(Url::create('/register')->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
             ->add(Url::create('/login')->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
             ->add(Url::create('/legals')->setPriority(0.5)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
-            ->add(Url::create('/404')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVERF))
+            ->add(Url::create('/404')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER))
             ->writeToFile(public_path('sitemap.xml'));
     }
 
