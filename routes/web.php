@@ -38,7 +38,3 @@ Route::middleware(['throttle:global', 'auth'])->group(function () {
 //    Route::get('/profile', [MainController::class, 'profile'])->name('profile');
     Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 });
-
-Route::group(['prefix' => 'admin', 'middleware' => ['throttle:global', 'admin']], function () {
-    Voyager::routes();
-});

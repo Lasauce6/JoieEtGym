@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends \TCG\Voyager\Models\User
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
