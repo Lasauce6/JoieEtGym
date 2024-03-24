@@ -5,245 +5,6 @@
 @section('content')
     <div class="container-md mt-5">
         <h2 class="text-center">Planning des cours</h2>
-{{--        <div class="card mb-5">--}}
-{{--            <table class="table table-striped-columns">--}}
-{{--                <thead>--}}
-{{--                <tr>--}}
-{{--                    <th class="col">Jour</th>--}}
-{{--                    <th class="col">Lieu</th>--}}
-{{--                    <th class="col">Heure</th>--}}
-{{--                    <th class="col">Cours</th>--}}
-{{--                    <th class="col">Enseignant</th>--}}
-{{--                </tr>--}}
-{{--                </thead>--}}
-{{--                <tbody>--}}
-{{--                <!-- Lundi -->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="8">Lundi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td rowspan="2">Souplesse-Etirements</td>--}}
-{{--                    <td rowspan="2">Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h15-11h15</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>18h00-19h00</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                    <td rowspan="2">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h10-20h10</td>--}}
-{{--                    <td>Taille Abdo-Fessiers</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="3">BOUSSY La Ferme--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Tonic</td>--}}
-{{--                    <td rowspan="2">Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h00-11h00</td>--}}
-{{--                    <td>Gym Musculaire</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>14h00-15h00</td>--}}
-{{--                    <td>Body Zen</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <!--Mardi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="11">Mardi</th>--}}
-{{--                    <td rowspan="2">EPINAY Sénart-Club</td>--}}
-{{--                    <td>18h15-19h15</td>--}}
-{{--                    <td>Gym Form</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h20-20h20</td>--}}
-{{--                    <td>Step</td>--}}
-{{--                    <td>Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>EPINAY Piscine Bonningue</td>--}}
-{{--                    <td>12h15-13h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="5">BOUSSY La Ferme</td>--}}
-{{--                    <td>10h00-10h45</td>--}}
-{{--                    <td rowspan="2">Gym Entretien</td>--}}
-{{--                    <td rowspan="3">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h45-11h30</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>14h00-17h15</td>--}}
-{{--                    <td rowspan="2">Yoga</td>--}}
-{{--                    <td rowspan="2">Mary</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>15h45-17h15</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Cosec</td>--}}
-{{--                    <td>20h45-21h45</td>--}}
-{{--                    <td>Dance Move/Abdo-Fessiers</td>--}}
-{{--                    <td>Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="2">VARENNES JARCY</td>--}}
-{{--                    <td>19h00-20h00</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                    <td rowspan="2">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>20h05-21h05</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                </tr>--}}
-{{--                <!--Mercredi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="6">Mercredi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Douce</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h30-20h30</td>--}}
-{{--                    <td>Dance Move</td>--}}
-{{--                    <td rowspan="2">Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>20h30-21h30</td>--}}
-{{--                    <td>Abdo-Fessiers Etirements</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>VARENNES JARCY</td>--}}
-{{--                    <td>09h15-10h15</td>--}}
-{{--                    <td>Gym Musculaire</td>--}}
-{{--                    <td>Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <!--Jeudi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="8">Jeudi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Form</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h15-11h15</td>--}}
-{{--                    <td>Body Zen</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Streching Postural</td>--}}
-{{--                    <td>Luckie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>18h00-19h00</td>--}}
-{{--                    <td>Bodysculp-Musculation</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>EPINAY Piscine Bonningue</td>--}}
-{{--                    <td>12h30-13h15</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Lamartine</td>--}}
-{{--                    <td>18h30-19h30</td>--}}
-{{--                    <td>Gym Détente Méthodes Pilates</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Cosec</td>--}}
-{{--                    <td>20h45-21h45</td>--}}
-{{--                    <td>Dance Move</td>--}}
-{{--                    <td rowspan="2">Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>VARENNES JARCY</td>--}}
-{{--                    <td>19h20-20h20</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                </tr>--}}
-{{--                <!--Vendredi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="4">Vendredi</th>--}}
-{{--                    <td>EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h30-10h30</td>--}}
-{{--                    <td>Gym Détente Méthode Pilates</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="2">BOUSSY La Ferme</td>--}}
-{{--                    <td>09h15-10h15</td>--}}
-{{--                    <td>Renforcement Musculaire</td>--}}
-{{--                    <td>Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>13h45-14h45</td>--}}
-{{--                    <td>Gym Douce</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <!--Samedi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="4">Samedi</th>--}}
-{{--                    <td>EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h30-10h30</td>--}}
-{{--                    <td>Yoga</td>--}}
-{{--                    <td>Virginie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="3">BOUSSY La Ferme</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Tonic</td>--}}
-{{--                    <td rowspan="3">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h00-11h00</td>--}}
-{{--                    <td>Etirements</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h00-12h00</td>--}}
-{{--                    <td>Streching Postural</td>--}}
-{{--                </tr>--}}
-{{--                </tbody>--}}
-{{--            </table>--}}
-{{--        </div>--}}
         <div id="loader" class="text-center mt-5">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Chargement...</span>
@@ -251,6 +12,11 @@
         </div>
 
         <div id='calendar' style="display: none"></div>
+
+        <div class="mt-5 text-center">
+            <a href="{{ asset('assets/pdf/PLANNING-2023-24.pdf') }}">Télécharger le planning</a>
+        </div>
+
         <!-- Fenêtre modale pour afficher les détails de l'événement -->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -346,7 +112,7 @@
                     eventClick: function (info) {
                         $('#eventModal .modal-title').text(info.event.title);
                         $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr', {weekday: 'long', hour: 'numeric', minute: '2-digit'}) + ' - ' + info.event.end.toLocaleString('fr', {hour: 'numeric', minute: '2-digit'}));
-                        $('#eventModal .modal-description').text("Professeur : " + info.event.extendedProps.description);
+                        $('#eventModal .modal-description').text("Animateur : " + info.event.extendedProps.description);
                         $('#eventModal .modal-location').text("Lieu : " + info.event.extendedProps.location);
                         initMap(info.event.extendedProps.latitude, info.event.extendedProps.longitude);
                         $('#eventModal').modal('show');

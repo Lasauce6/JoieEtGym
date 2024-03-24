@@ -32,7 +32,7 @@
                     <a href="{{ route('inscription') }}">Nous rejoindre</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/Assurance-IA-Sports2023-06-16-IJ-n°169-CLUBS-1.pdf') }}">Assurance complémentaire IA Sports</a>
+                    <a href="{{ asset('/assets/pdf/FFEPGV-Notice-IDC-OPTION-I.A-SPORT.pdf') }}">Assurance complémentaire IA Sports</a>
                 </div>
             </div>
             <div class="row">
