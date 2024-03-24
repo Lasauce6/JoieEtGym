@@ -12,7 +12,7 @@
                         margin-left: 10%
                         }">
                             <h3>Apprenez à nous connaitre</h3>
-                            <p>L'association Joie et Gym est avant tout là pour votre bien-être.<br>Nous vous aidons à rester en forme !</p>
+                            <p>L'association Joie et Gym est avant tout là pour votre bien-être.<br>Nous vous aidons à rester en forme et « à mieux vieillir ».</p>
 {{--                            <a href="#" class="btn btn-primary">En savoir plus</a>--}}
                         </div>
                         <div class="col d-flex justify-content-center">
@@ -43,7 +43,7 @@
                         <div class="col mt-4" style="@media screen and (min-width: 768px) {
                         margin-left: 10%
                         }">
-                            <h3>19 cours différents</h3>
+                            <h3>Des cours variés</h3>
                             <p>Répartis sur toute la semaine du Lundi au Samedi</p>
                             <a href="{{ route('planning') }}" class="btn btn-primary">Voir nos cours</a>
                         </div>
@@ -68,25 +68,54 @@
         <h2 class="mt-5 text-center">Notre association :</h2>
         <div class="row align-items-center justify-content-center">
             <div class="col">
-                <p class="lead">Joie et Gymnastique au Val d'Yerres est une Association sans but lucratif affiliée à la Fédération Française de Gymnastique Volontaire<br>
-                Depuis 50 ans, elle propose des séances d'activités physiques variées, accessibles à tous les âges de la vie à partir de 16 ans révolus.</p>
+                <p>
+                    Association à but non lucratif régie par la loi de 1901 et affiliée à la Fédération Française d'Education Physique et de Gymnastique Volontaire (FFEPGV). <br>
+                    <strong>Joie et Gymnastique au Val d'Yerres</strong> est présente sur le territoire depuis plus de 50 ans, et prpopose des séances d'activités sportives
+                            et physiques diverses, accessibles à tout les âges dès 16 ans révolus.
+                </p>
             </div>
             <div class="col d-flex justify-content-center align-items-center">
                 <img src="{{ asset('/assets/images/Logo_FFEPGV_420x420.png') }}" class="d-block mx-auto" alt="Logo FFEPGV" height="'420'" width="420">
             </div>
         </div>
         <div class="row align-items-center justify-content-center text-center mt-5">
-            <p><strong>Yoga, Gym Forme, Aquagym, Pilate, Stretching, Dance Move, Abdo-fessiers, Étirements, etc...</strong></p>
-            <p>Notre programme offre plus de 45 heures de cours par semaine à prix attractif.<br>
-            Du lundi au samedi midi durant l'année scolaire, en journée, mais également en soirée, pour répondre aux besoins de celles et ceux qui travaillent, vous pouvez garder la forme grâce au sport.</p>
-            <p>10 Animateurs proposent à nos 350 adhérents. Résidant ou non dans le Val d'Yerres, des cours variés, correspondants aux attentes de chacun, dans une ambiance chaleureuse.</p>
-        </div>
-
-        <div class="row align-items-center justify-content-center mt-5">
-            <div class="col d-flex justify-content-center align-items-center">
-                <img src="{{ asset('/assets/images/logo_epgv.png') }}" class="d-block mx-auto" alt="Logo Sport et santé" height="250" width="432">
+            <div class="row align-items-center justify-content-center mt-5">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('/assets/images/logo_epgv.png') }}" class="d-block mx-auto" alt="Logo Sport et santé" height="250" width="432">
+                </div>
+                <div class="col">
+                    <p>
+                        L'association a obtenu en 2022 le <strong>" Label Qualité Club Sport Santé "</strong> qui garantit une vie associative
+                        de qualité, avec un encadrement Sport Santé professionnel, adapté aux attentes et capacités de ses pratiquants,
+                        avec des actions centrées sur le bien-être et le Sport Santé.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-3">
+                <p>
+                    Pour répondre aux besoins, aux envies et aux disponibilités de tous, notre programme offre près de 40 heures de cours par semaine
+                    à un prix attractif où chacun peut pratiquer en <strong>" illimité "</strong> (hors options*) différentes disciplines sport-santé telles que :
+                </p>
+                <ul class="fw-bold fs-5 list-unstyled">
+                    <li>Gym Entretien, Gym Form', Gym Tonic</li>
+                    <li>Stretching Postural*, Souplesse-Etirements</li>
+                    <li>Taille Abdos-Fessiers, Gym Musculaire</li>
+                    <li>Aquagym*</li>
+                    <li>Yoga*, Yoga Nidra*, Body Zen, Gym Douce</li>
+                    <li>Dance Move type Zumba, Gym Méthode Pilates</li>
+                    <li>Bodysculpt-Musculation, Renforcement Musculaire</li>
+                    <li>Equilibre et Coordination Seniors</li>
+                </ul>
+                <p>
+                    Consultez notre <a href="{{ route('planning') }}">planning</a> de la saison 2023-2024 du lundi au samedi midi durant toute
+                    l'année scolaire, en journée et en soirée.<br>
+                    Pour le plaisir de tous, c'est dans une ambiance chaleureuse et conviviale que nos animateurs diplômés dispensent aux adhérents
+                    des cours variés et animés, correspondants aux attentes de chacun.
+                </p>
             </div>
         </div>
+
+
 
         <div class="row align-items-center justify-content-center mt-5">
             <div class="col d-flex justify-content-center align-items-center">
@@ -106,7 +135,7 @@
             </div>
         </div>
         <div class="row align-items-center justify-content-center mt-5">
-            <p class="text-center lead"><strong>Les municipalités d'Epinay-sous-Sénart, Boussy-Saint-Antoine et Varennes-Jarcy, nous aident et mettent des salles à notre disposition :</strong></p>
+            <p class="text-center lead"><strong>Les municipalités d'Epinay-sous-Sénart, Boussy-Saint-Antoine et Varennes-Jarcy, mettent des salles à notre disposition :</strong></p>
         </div>
         <div class="row align-items-center justify-content-center mt-5">
             <div class="col d-flex justify-content-center align-items-center">
@@ -153,6 +182,15 @@
                     <div class="card-body">
                         <h5 class="card-title">Salle à la Mairie<br>
                             Varennes-Jarcy</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Gymnase_Antonins_Boussy.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Salle des Antonins<br>
+                            Boussy-Saint-Antoine</h5>
                     </div>
                 </div>
             </div>
