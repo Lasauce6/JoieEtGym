@@ -64,10 +64,10 @@ class MainController extends Controller
         $filteredResults = [];
 
         foreach ($results as $result) {
-            if (str_contains($result->summary, 'Aquagym')) {
+            if (str_contains($result->summary, 'Aqua')) {
                 $result->color = '#4285F4FF';
             } else if (str_contains($result->summary, 'Yoga Nidra')) {
-                $result->color = '#039BE5FF';
+                $result->color = '#33B679FF';
             } else if (str_contains($result->location, 'Épinay')) {
                 $result->color = '#33B679FF';
             } else if (str_contains($result->location, 'Boussy')) {
