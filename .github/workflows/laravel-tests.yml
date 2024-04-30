@@ -18,7 +18,7 @@ jobs:
       # Label used to access the service container
       mysql:
         # Docker Hub image (also with version)
-        image: mysql:latest
+        image: mysql:5.7.36
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
           MYSQL_DATABASE:  joieetgym
@@ -110,7 +110,7 @@ jobs:
 
 
     - uses: symfonycorp/security-checker-action@v4
-    
+
     - name: Browser Test - upgrade and start Chrome Driver
       run: |
         composer require --dev laravel/dusk
