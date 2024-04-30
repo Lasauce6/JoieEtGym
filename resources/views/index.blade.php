@@ -70,8 +70,8 @@
             <div class="col">
                 <p>
                     Association à but non lucratif régie par la loi de 1901 et affiliée à la Fédération Française d'Education Physique et de Gymnastique Volontaire (FFEPGV). <br>
-                    <strong>Joie et Gymnastique au Val d'Yerres</strong> est présente sur le territoire depuis plus de 50 ans, et prpopose des séances d'activités sportives
-                            et physiques diverses, accessibles à tout les âges dès 16 ans révolus.
+                    <strong>Joie et Gymnastique au Val d'Yerres</strong> est présente sur le territoire depuis plus de 50 ans, et propose des séances d'activités sportives
+                            et physiques diverses, accessibles à tous les âges dès 16 ans révolus.
                 </p>
             </div>
             <div class="col d-flex justify-content-center align-items-center">
@@ -107,10 +107,13 @@
                     <li>Equilibre et Coordination Seniors</li>
                 </ul>
                 <p>
-                    Consultez notre <a href="{{ route('planning') }}">planning</a> de la saison 2023-2024 du lundi au samedi midi durant toute
+                    Les cours ont lieu du lundi au samedi midi durant toute
                     l'année scolaire, en journée et en soirée.<br>
                     Pour le plaisir de tous, c'est dans une ambiance chaleureuse et conviviale que nos animateurs diplômés dispensent aux adhérents
                     des cours variés et animés, correspondants aux attentes de chacun.
+                </p>
+                <p>
+                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2023-2024</a>
                 </p>
             </div>
         </div>
