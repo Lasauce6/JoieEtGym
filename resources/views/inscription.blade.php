@@ -15,11 +15,21 @@
                         Les inscriptions peuvent se faire tout au long de l'année
                     </p>
                     <p class="mt-4 text-muted text-center fs-6">
-                        (Les inscriptions en ligne ne sont pas disponibles pour le moment, vous pouvez télécharger le bulletin d'inscription et le planning ci-dessous à nous renvoyer par courrier ou par mail)
+                        (Les inscriptions en ligne ne sont pas disponibles pour le moment).<br>
+                        Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé. Ces documents doivent être remis accompagnés du règlement.
                     </p>
                     <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Bulletin-inscription-2023-2024.pdf') }}"></iframe>
                     </div>
+                    <p class="mt-4 text-muted text-center fs-6">
+                        Questionnaire de santé
+                    </p>
+                    <div class="embed-responsive mx-5">
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Questionnaire-2023-2024.pdf') }}"></iframe>
+                    </div>
+                    <p class="mt-4 text-muted text-center fs-6">
+                        Planning des cours
+                    </p>
                     <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/PLANNING-2023-24.pdf') }}"></iframe>
                     </div>
@@ -29,12 +39,7 @@
                     <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/couvtripti23246.pdf') }}"></iframe>
                     </div>
-                    <p class="mt-4 text-muted text-center fs-6">
-                        Questionnaire de santé
-                    </p>
-                    <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Questionnaire-2023-2024.pdf') }}"></iframe>
-                    </div>
+
                 </div>
             </div>
         </div>
