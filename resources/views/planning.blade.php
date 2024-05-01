@@ -5,6 +5,9 @@
 @section('content')
     <div class="container-md mt-5">
         <h2 class="text-center">Planning des cours</h2>
+        <p class="mt-4 text-muted text-center fs-6">
+            (Orange : Boussy-Saint-Antoine, Vert : Epinay-sous-Sénart, Jaune : Varennes Jarcy, Bleu : Aquagym)
+        </p>
         <div id="loader" class="text-center mt-5">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Chargement...</span>
@@ -111,7 +114,9 @@
                     events: data,
                     eventClick: function (info) {
                         $('#eventModal .modal-title').text(info.event.title);
-                        $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr', {weekday: 'long', hour: 'numeric', minute: '2-digit'}) + ' - ' + info.event.end.toLocaleString('fr', {hour: 'numeric', minute: '2-digit'}));
+                        $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr-FR', { timeZone: 'GMT', weekday: 'long', hour: 'numeric', minute: '2-digit' })
+                            + ' - '
+                            + info.event.end.toLocaleString('fr-FR', { timeZone: 'GMT', hour: 'numeric', minute: '2-digit' }));
                         $('#eventModal .modal-description').text("Animateur : " + info.event.extendedProps.description);
                         $('#eventModal .modal-location').text("Lieu : " + info.event.extendedProps.location);
                         initMap(info.event.extendedProps.latitude, info.event.extendedProps.longitude);

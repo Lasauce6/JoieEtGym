@@ -113,6 +113,11 @@ class MainController extends Controller
         return response()->json($filteredResults);
     }
 
+    public function cours(): View|Application|Factory
+    {
+        return view('cours');
+    }
+
     public function login(): View|Factory|Application
     {
         return view('auth.login');

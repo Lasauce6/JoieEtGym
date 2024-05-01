@@ -13,7 +13,6 @@
                         }">
                             <h3>Apprenez à nous connaitre</h3>
                             <p>L'association Joie et Gym est avant tout là pour votre bien-être.<br>Nous vous aidons à rester en forme et « à mieux vieillir ».</p>
-{{--                            <a href="#" class="btn btn-primary">En savoir plus</a>--}}
                         </div>
                         <div class="col d-flex justify-content-center">
                             <img src="{{ asset('/assets/images/carousel/1.png') }}" class="d-block m-5" alt="Logo Joie et Gym" height="300" width="298">
@@ -45,7 +44,7 @@
                         }">
                             <h3>Des cours variés</h3>
                             <p>Répartis sur toute la semaine du Lundi au Samedi</p>
-                            <a href="{{ route('planning') }}" class="btn btn-primary">Voir nos cours</a>
+                            <a href="{{ route('planning') }}" class="btn btn-primary">Voir le planning</a>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <img src="{{ asset('/assets/images/carousel/3.png') }}" class="d-block m-5" alt="Gym 2" height="300" width="450">
@@ -147,6 +146,7 @@
                     <div class="card-body">
                         <h5 class="card-title">La Ferme<br>
                             Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/gGfTc2QzfftbktuA7" target="_blank">Chemin de la Ferme, 91800 Boussy-Saint-Antoine</a>
                     </div>
                 </div>
             </div>
@@ -156,6 +156,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Le gymnase COSEC<br>
                             Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/zEAnWVE337FJbAwN7" target="_blank">10 Rue des Glaises, 91800 Boussy-Saint-Antoine</a>
                     </div>
                 </div>
             </div>
@@ -165,6 +166,7 @@
                     <div class="card-body">
                         <h5 class="card-title">La salle du Sénart-Club<br>
                             Epinay-Sous-Sénart</h5>
+                        <a href="https://maps.app.goo.gl/1JukNH1uT6JnREWQ7" target="_blank">40 bis Rue de la Croix Rochopt, 91860 Épinay-sous-Sénart</a>
                     </div>
                 </div>
             </div>
@@ -176,6 +178,7 @@
                     <div class="card-body">
                         <h5 class="card-title">L'ancienne Mairie<br>
                             Epinay-Sous-Sénart</h5>
+                        <a href="https://maps.app.goo.gl/tKt7BRZucLZwiYz16" target="_blank">17 Rue de Boussy, 91860 Épinay-sous-Sénart</a>
                     </div>
                 </div>
             </div>
@@ -185,6 +188,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Salle à la Mairie<br>
                             Varennes-Jarcy</h5>
+                        <a href="https://maps.app.goo.gl/QBiZNktZTygX3X6N7" target="_blank">2 Pl. Aristide Briand, 94520 Varennes-Jarcy</a>
                     </div>
                 </div>
             </div>
@@ -194,6 +198,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Salle des Antonins<br>
                             Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/PQB1ScaQJqVS35KKA" target="_blank">Les Friches, 91800 Boussy-Saint-Antoine</a>
                     </div>
                 </div>
             </div>
@@ -208,6 +213,7 @@
                     <div class="card-body">
                         <h5 class="card-title">La Piscine des Sénarts<br>
                             Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/ad63VqWYpqdfGrde9" target="_blank">1 Rue de Rochopt, 91800 Boussy-Saint-Antoine</a>
                     </div>
                 </div>
             </div>
@@ -217,6 +223,7 @@
                     <div class="card-body">
                         <h5 class="card-title">La Piscine Yves Moreau<br>
                             Brunoy</h5>
+                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>
 {{--                        <p class="card-text text-muted">(En attente)</p>--}}
                     </div>
                 </div>

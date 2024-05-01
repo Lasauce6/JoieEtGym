@@ -21,6 +21,7 @@ Route::middleware(['throttle:global'])->group(function () {
     Route::get('/news/{category}', [PostController::class, 'category'])->name('news.category');
     Route::get('/news/{category}/{slug}', [PostController::class, 'post'])->name('news.post');
     Route::get('/planning', [MainController::class, 'planning'])->name('planning');
+    Route::get('/courses', [MainController::class, 'cours'])->name('cours');
     Route::get('/load-planning', [MainController::class, 'loadPlanning'])->name('loadPlanning');
     Route::get('/inscription', [MainController::class, 'inscription'])->name('inscription');
     Route::get('/register', [MainController::class, 'register'])->name('register');
