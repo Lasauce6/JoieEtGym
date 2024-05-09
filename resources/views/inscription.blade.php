@@ -16,7 +16,7 @@
                     </p>
                     <p class="mt-4 text-muted text-center fs-6">
                         (Les inscriptions en ligne ne sont pas disponibles pour le moment).<br>
-                        Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé. Ces documents doivent être remis accompagnés du règlement.
+                        Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé.
                     </p>
                     <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Bulletin-inscription-2023-2024.pdf') }}"></iframe>
