@@ -136,7 +136,7 @@
             </div>
             <div class="col-md-6">
                 <div class="course">
-                    <h3>Dance-Move® type Zumba</h3>
+                    <h3>Dance-Move®</h3>
                     <p>
                         Activité chorégraphiée idéale pour brûler des calories
                         et bouger son corps au rythme de la musique tout en s‘amusant avec des exercices

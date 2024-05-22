@@ -101,7 +101,7 @@
                     <li>Taille Abdos-Fessiers, Gym Musculaire</li>
                     <li>Aquagym*</li>
                     <li>Yoga*, Yoga Nidra*, Body Zen, Gym Douce</li>
-                    <li>Dance Move type Zumba, Gym Méthode Pilates</li>
+                    <li>Dance Move, Gym Méthode Pilates</li>
                     <li>Bodysculpt-Musculation, Renforcement Musculaire</li>
                     <li>Equilibre et Coordination Seniors</li>
                 </ul>
@@ -109,7 +109,7 @@
                     Les cours ont lieu du lundi au samedi midi durant toute
                     l'année scolaire, en journée et en soirée.<br>
                     Pour le plaisir de tous, c'est dans une ambiance chaleureuse et conviviale que nos animateurs diplômés dispensent aux adhérents
-                    des cours variés et animés, correspondants aux attentes de chacun.
+                    des cours variés et animés, correspondant aux attentes de chacun.
                 </p>
                 <p>
                     <a href="{{ route('planning') }}">Consultez notre planning de la saison 2023-2024</a>
