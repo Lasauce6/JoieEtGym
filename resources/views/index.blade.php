@@ -2,6 +2,40 @@
 
 @section('title', 'Accueil')
 
+@php
+    $descriptions = [
+        'Eric' => 'Aquagym Brunoy',
+        'Fabrice' => 'Danse-Move, Gym Entretien, <br>
+         Abdo-Fessiers Etirements',
+        'Isabelle' => 'Souplesse-Etirements',
+        'Joëlle' => 'Body Zen, Gym Entretien, <br>
+        Stretching Postural, Equilibre et Coordination Séniors, <br>
+         Taille Abdo-Fessiers',
+        'Luckie' => 'Stretching Postural',
+        'Mary' => 'Yoga',
+        'Nathalie' => 'Souplesse Etirements, Body Zen, <br>
+         Gym Détente Méthodes Pilates',
+        'Rose Marie' => 'Gym Douce, Gym Forme, <br>
+        Bodysculpt-Musculation',
+        'Vincent' => 'Gym Musculaire, Gym Tonic, <br>
+         Renforcement Musculaire',
+        'Virginie' => 'Yoga Nidra',
+    ];
+    $roles = [
+        'Gabriele MAKKAOUI' => 'Présidente',
+        'Catherine SCHMITT' => 'Vice-Présidente',
+        'Michèle FLAMEN' => 'Secrétaire',
+        'Michelle ROUSSEAU' => 'Secrétaire Adjointe',
+        'Claudine LE CHAUDELEC' => 'Trésorière',
+        'Gérard AUSSEIL' => 'Membre',
+        'Danièle CAMPION' => 'Membre',
+        'Marie-Bernadette CHORON' => 'Membre',
+        'Danielle COUVREUX' => 'Membre',
+        'Bernadette MANSOUR' => 'Membre',
+        'Françoise MOGUET' => 'Membre',
+    ];
+@endphp
+
 @section('content')
     <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -132,6 +166,35 @@
                 <a href="https://www.varennesjarcy.fr/" target="_blank">
                     <img src="{{ asset('/assets/images/logo_varennes.png') }}" class="d-block mx-auto" alt="Logo Varennes Jarcy" height="102.4" width="200">
                 </a>
+            </div>
+        </div>
+
+        <h2 class="my-5 text-center">Nos Animateurs</h2>
+        <div class="row">
+            <!-- Animateurs -->
+            <div class="col-12 d-flex flex-wrap justify-content-center">
+                @foreach(['Eric', 'Fabrice', 'Isabelle', 'Joëlle', 'Luckie', 'Mary', 'Nathalie', 'Rose Marie', 'Vincent', 'Virginie'] as $animateur)
+                    <div class="p-3 text-center">
+{{--                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">--}}
+                        <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
+                        <h5>{{ $animateur }}</h5>
+                        <p class="text-muted">{!! $descriptions[$animateur] !!}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <h2 class="my-5 text-center">Les Membres du Bureau</h2>
+        <div class="row">
+            <div class="col-12 d-flex flex-wrap justify-content-center">
+                @foreach(['Gabriele MAKKAOUI', 'Catherine SCHMITT', 'Michèle FLAMEN', 'Michelle ROUSSEAU', 'Claudine LE CHAUDELEC', 'Gérard AUSSEIL', 'Danièle CAMPION', 'Marie-Bernadette CHORON', 'Danielle COUVREUX', 'Bernadette MANSOUR', 'Françoise MOGUET'] as $membre)
+                    <div class="p-3 text-center">
+{{--                        <img src="{{ asset('/assets/images/bureau/'.$membre.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">--}}
+                        <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">
+                        <h5>{{ $membre }}</h5>
+                        <p class="text-muted">{{ $roles[$membre] }}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
 
