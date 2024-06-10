@@ -3,8 +3,10 @@
 @section('title', 'Accueil')
 
 @php
-    $descriptions = [
+    $animateurs = [
         'Eric' => 'Aquagym Brunoy',
+        'Paul' => 'Aquagym Boussy',
+        'Rémi' => 'Aquagym Boussy',
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
          Abdo-Fessiers Etirements',
         'Isabelle' => 'Souplesse-Etirements',
@@ -21,7 +23,7 @@
          Renforcement Musculaire',
         'Virginie' => 'Yoga Nidra',
     ];
-    $roles = [
+    $bureau = [
         'Gabriele MAKKAOUI' => 'Présidente',
         'Catherine SCHMITT' => 'Vice-Présidente',
         'Michèle FLAMEN' => 'Secrétaire',
@@ -173,12 +175,12 @@
         <div class="row">
             <!-- Animateurs -->
             <div class="col-12 d-flex flex-wrap justify-content-center">
-                @foreach(['Eric', 'Fabrice', 'Isabelle', 'Joëlle', 'Luckie', 'Mary', 'Nathalie', 'Rose Marie', 'Vincent', 'Virginie'] as $animateur)
+                @foreach($animateurs as $animateur => $description)
                     <div class="p-3 text-center">
 {{--                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">--}}
                         <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
                         <h5>{{ $animateur }}</h5>
-                        <p class="text-muted">{!! $descriptions[$animateur] !!}</p>
+                        <p class="text-muted">{!! $description !!}</p>
                     </div>
                 @endforeach
             </div>
@@ -187,12 +189,12 @@
         <h2 class="my-5 text-center">Les Membres du Bureau</h2>
         <div class="row">
             <div class="col-12 d-flex flex-wrap justify-content-center">
-                @foreach(['Gabriele MAKKAOUI', 'Catherine SCHMITT', 'Michèle FLAMEN', 'Michelle ROUSSEAU', 'Claudine LE CHAUDELEC', 'Gérard AUSSEIL', 'Danièle CAMPION', 'Marie-Bernadette CHORON', 'Danielle COUVREUX', 'Bernadette MANSOUR', 'Françoise MOGUET'] as $membre)
+                @foreach($bureau as $membre => $role)
                     <div class="p-3 text-center">
 {{--                        <img src="{{ asset('/assets/images/bureau/'.$membre.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">--}}
                         <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">
                         <h5>{{ $membre }}</h5>
-                        <p class="text-muted">{{ $roles[$membre] }}</p>
+                        <p class="text-muted">{{ $role }}</p>
                     </div>
                 @endforeach
             </div>
