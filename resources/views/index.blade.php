@@ -4,12 +4,12 @@
 
 @php
     $animateurs = [
-        'Eric' => 'Aquagym Brunoy',
+//        'Eric' => 'Aquagym Brunoy',
         'Paul' => 'Aquagym Boussy',
         'Rémi' => 'Aquagym Boussy',
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
          Abdo-Fessiers Etirements',
-        'Isabelle' => 'Souplesse-Etirements',
+        'Isabelle' => 'LIA Aérobic, Abdo-Fessiers Stretching',
         'Joëlle' => 'Body Zen, Gym Entretien, <br>
         Stretching Postural, Equilibre et Coordination Séniors, <br>
          Taille Abdo-Fessiers',
@@ -136,6 +136,7 @@
                     <li>Stretching Postural*, Souplesse-Etirements</li>
                     <li>Taille Abdos-Fessiers, Gym Musculaire</li>
                     <li>Aquagym*</li>
+                    <li>LIA Aérobic</li>
                     <li>Yoga*, Yoga Nidra*, Body Zen, Gym Douce</li>
                     <li>Dance Move, Gym Méthode Pilates</li>
                     <li>Bodysculpt-Musculation, Renforcement Musculaire</li>
@@ -148,7 +149,7 @@
                     des cours variés et animés, correspondant aux attentes de chacun.
                 </p>
                 <p>
-                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2023-2024</a>
+                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2024-2025</a>
                 </p>
             </div>
         </div>

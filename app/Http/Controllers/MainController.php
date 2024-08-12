@@ -52,7 +52,7 @@ class MainController extends Controller
         $client = new GoogleClient();
         $client->setApplicationName('Agenda');
         $client->setScopes(Google_Service_Calendar::CALENDAR);
-        $client->setDeveloperKey("AIzaSyAjgfE_sxrqQe3C5nwXmNI0BWLwT0cV-HM");
+        $client->setDeveloperKey($_ENV['GOOGLE_API_KEY']); ## TODO : Changer cette clé api avec .env et la supprimer
         $service = new Google_Service_Calendar($client);
         $calendarId = '70e8e6af536fe8e57ccbcb3882f80dd3a8f2866781534598537be93e3ce4813a@group.calendar.google.com';
 
@@ -85,19 +85,24 @@ class MainController extends Controller
 
             $guzzleClient = new GuzzleClient();
 
-            $geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
-            $geocodeResponse = $guzzleClient->get($geocodeUrl, [
-                'query' => [
-                    'address' => $result->location,
-                    'key' => 'AIzaSyASp72IjHskwrcCWyhdFsixQxTICadnwLE',
-                ]
-            ]);
+            if (!empty($result->location)) {
+                $geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
+                $geocodeResponse = $guzzleClient->get($geocodeUrl, [
+                    'query' => [
+                        'address' => $result->location,
+                        'key' => $_ENV['GOOGLE_API_KEY'],
+                    ]
+                ]);
 
-            $geocodeData = json_decode($geocodeResponse->getBody(), true);
+                $geocodeData = json_decode($geocodeResponse->getBody(), true);
 
-            if ($geocodeData['status'] === 'OK') {
-                $result->latitude = $geocodeData['results'][0]['geometry']['location']['lat'];
-                $result->longitude = $geocodeData['results'][0]['geometry']['location']['lng'];
+                if ($geocodeData['status'] === 'OK') {
+                    $result->latitude = $geocodeData['results'][0]['geometry']['location']['lat'];
+                    $result->longitude = $geocodeData['results'][0]['geometry']['location']['lng'];
+                } else {
+                    $result->latitude = null;
+                    $result->longitude = null;
+                }
             } else {
                 $result->latitude = null;
                 $result->longitude = null;

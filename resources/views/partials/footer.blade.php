@@ -24,7 +24,7 @@
                     <a href="{{ route('planning') }}">Le planning</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/ANNEXE-1-Résumé-garanties-MAIF-23-24.pdf') }}">Assurance MAIF</a>
+                    <a href="{{ asset('/assets/pdf/Garanties-Maif-24-25.jpeg') }}">Assurance MAIF</a>
                 </div>
             </div>
             <div class="row">
@@ -32,7 +32,7 @@
                     <a href="{{ route('inscription') }}">Nous rejoindre</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/FFEPGV-Notice-IDC-OPTION-I.A-SPORT.pdf') }}">Assurance complémentaire IA Sports</a>
+                    <a href="{{ asset('/assets/pdf/SOUSCRIPTION-IA-SPORT.pdf') }}">Assurance complémentaire IA Sports</a>
                 </div>
             </div>
             <div class="row">
