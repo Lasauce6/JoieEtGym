@@ -29,7 +29,7 @@
         <div id='calendar' style="display: none"></div>
 
         <div class="mt-5 text-center">
-            <a href="{{ asset('assets/pdf/PLANNING-2023-24.pdf') }}">Télécharger le planning</a>
+            <a href="{{ asset('assets/pdf/planning2024-2025.pdf') }}">Télécharger le planning</a>
         </div>
 
 
@@ -190,9 +190,11 @@
                     calendarEl.style.display = '';
 
                     const googleMapsScript = document.createElement('script');
-                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyASp72IjHskwrcCWyhdFsixQxTICadnwLE&libraries=places&callback=initMap`;
+                    let apikey = "{{ env('GOOGLE_API_KEY') }}";
+                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&libraries=places&callback=initMap`;
                     googleMapsScript.defer = true;
                     document.head.appendChild(googleMapsScript);
+
 
                 const calendar = new FullCalendar.Calendar(calendarEl, {
                     initialDate: startOfWeek,
