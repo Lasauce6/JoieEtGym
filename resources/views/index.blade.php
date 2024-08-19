@@ -99,6 +99,12 @@
         </button>
     </div>
 
+    <div class="flash-info text-center py-2" style="background-color: #ffcc00; color: #333;">
+    <a href="{{ route('news.category', ['category' => 'flash-info']) }}" class="flash-link" style="text-decoration: none; color: inherit;">
+        <strong>Flash Info : Cliquez ici pour accéder aux flash infos</strong>
+    </a>
+</div>
+
     <div class="container">
         <h2 class="mt-5 text-center">Notre association :</h2>
         <div class="row align-items-center justify-content-center">

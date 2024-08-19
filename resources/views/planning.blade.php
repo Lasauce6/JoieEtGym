@@ -114,17 +114,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center align-items-center">
-                <div class="card mt-2" style="width: 18rem;">
-                    <img src="{{ asset('/assets/images/cards/Piscine_Brunoy.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La Piscine Yves Moreau<br>
-                            Brunoy</h5>
-                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>
-                        {{--                        <p class="card-text text-muted">(En attente)</p>--}}
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col d-flex justify-content-center align-items-center">--}}
+{{--                <div class="card mt-2" style="width: 18rem;">--}}
+{{--                    <img src="{{ asset('/assets/images/cards/Piscine_Brunoy.jpg') }}" class="card-img-top" alt="...">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <h5 class="card-title">La Piscine Yves Moreau<br>--}}
+{{--                            Brunoy</h5>--}}
+{{--                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>--}}
+{{--                        --}}{{--                        <p class="card-text text-muted">(En attente)</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             {{--            <div class="col d-flex justify-content-center align-items-center">--}}
             {{--                <div class="card mt-2" style="width: 18rem;">--}}
             {{--                    <img src="{{ asset('/assets/images/cards/Piscine_Epinay.jpg') }}" class="card-img-top" alt="...">--}}
