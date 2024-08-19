@@ -186,6 +186,15 @@
                     </p>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="course">
+                    <h3>LIA Aérobic</h3>
+                    <p>
+                        Le LIA est une pratique sportive dérivée du step. Cette discipline consiste à travailler son aérobie tout
+                        en faisant des mouvements dansés et des exercices de step sans step. C'est une discipline cardio
+                        dont le but est de brûler des calories et de se défouler.
+                    </p>
+                </div>
         </div>
     </div>
 @endsection
