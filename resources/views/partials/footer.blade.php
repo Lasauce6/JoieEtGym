@@ -24,7 +24,7 @@
                     <a href="{{ route('planning') }}">Le planning</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/Garanties-Maif-24-25.jpeg') }}">Assurance MAIF</a>
+                    <a href="{{ asset('/assets/pdf/garanties-maif.jpg') }}">Assurance MAIF</a>
                 </div>
             </div>
             <div class="row">
