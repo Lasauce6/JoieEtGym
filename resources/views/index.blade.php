@@ -9,7 +9,7 @@
         'Rémi' => 'Aquagym Boussy',
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
          Abdo-Fessiers Etirements',
-        'Isabelle' => 'LIA Aérobic, Abdo-Fessiers Stretching',
+        'Isabelle' => 'LIA Aérobic, Renforcement Musculaire',
         'Joëlle' => 'Body Zen, Gym Entretien, <br>
         Stretching Postural, Equilibre et Coordination Séniors, <br>
          Taille Abdo-Fessiers',
