@@ -191,6 +191,7 @@ return [
     ],
 
     'additional_js' => [
+        'assets/js/tinymce.js',
         //'js/custom.js',
     ],
 
