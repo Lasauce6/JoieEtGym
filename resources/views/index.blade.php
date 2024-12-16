@@ -184,8 +184,7 @@
             <div class="col-12 d-flex flex-wrap justify-content-center">
                 @foreach($animateurs as $animateur => $description)
                     <div class="p-3 text-center">
-{{--                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">--}}
-                        <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
+                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
                         <h5>{{ $animateur }}</h5>
                         <p class="text-muted">{!! $description !!}</p>
                     </div>
@@ -198,7 +197,7 @@
             <div class="col-12 d-flex flex-wrap justify-content-center">
                 @foreach($bureau as $membre => $role)
                     <div class="p-3 text-center">
-{{--                        <img src="{{ asset('/assets/images/bureau/'.$membre.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">--}}
+{{--                        <img src="{{ asset('/assets/images/bureau/'.$membre.'.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">--}}
                         <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">
                         <h5>{{ $membre }}</h5>
                         <p class="text-muted">{{ $role }}</p>
