@@ -18,8 +18,13 @@ class BlogPost extends Model implements Sitemapable
 
     public function link(): string
     {
+        if (!$this->category)
+        {
+            return url('/news/');
+        }
         return url('/news/' . $this->category->slug . '/' . $this->slug);
     }
+
     public function image(){
         return Voyager::image($this->image);
     }
