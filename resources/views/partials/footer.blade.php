@@ -39,7 +39,7 @@
                 <div class="col">
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/CR-AG-du-25nov2023.pdf') }}">Compte rendu AG</a>
+                    <a href="{{ asset('/assets/pdf/CR-AG-du-07dec2024.pdf') }}">Compte rendu AG</a>
                 </div>
             </div>
         </section>
