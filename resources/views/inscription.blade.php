@@ -19,9 +19,6 @@
                         Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé.
                     </p>
                     <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/tarifs-2024-2025.pdf') }}"></iframe>
-                    </div>
-                    <div class="embed-responsive mx-5">
                         <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Bulletin-inscription-2024-2025.pdf') }}"></iframe>
                     </div>
                     <p class="mt-4 text-muted text-center fs-6">
