@@ -43,6 +43,11 @@ class MainController extends Controller
         return view('planning');
     }
 
+    public function tarifs(): Application|Factory|View
+    {
+        return view('tarifs');
+    }
+
     /**
      * @throws GuzzleException
      * @throws Exception

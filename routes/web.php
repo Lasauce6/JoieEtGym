@@ -29,6 +29,7 @@ Route::middleware(['throttle:global'])->group(function () {
     Route::view('/legals', 'legals')->name('legals');
     Route::view('/404', 'errors.404')->name('404');
     Route::get('/sitemap' , [MainController::class, 'sitemap'])->name('sitemap');
+    Route::get('/tarifs', [MainController::class, 'tarifs'])->name('tarifs');
 });
 
 Route::middleware(['throttle:login'])->group(function () {
