@@ -21,16 +21,6 @@
             </div>
             <div class="col-md-6">
                 <div class="course">
-                    <h3>Gym Form’</h3>
-                    <p>
-                        Activité qui regroupe plusieurs techniques pour faire travailler les
-                        différents groupes musculaires et le système cardiovasculaire, afin d’assurer une
-                        remise en forme et un entretien physique régulier.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="course">
                     <h3>Gym tonic</h3>
                     <p>
                         Cours de fitness traditionnel, composé d’exercices dynamiques de
@@ -136,7 +126,7 @@
             </div>
             <div class="col-md-6">
                 <div class="course">
-                    <h3>Dance-Move</h3>
+                    <h3>Dance-Move® type Zumba</h3>
                     <p>
                         Activité chorégraphiée idéale pour brûler des calories
                         et bouger son corps au rythme de la musique tout en s‘amusant avec des exercices
@@ -146,7 +136,7 @@
             </div>
             <div class="col-md-6">
                 <div class="course">
-                    <h3>Gym Douce Méthode Pilates</h3>
+                    <h3>Gym Détente Méthode Pilates</h3>
                     <p>
                         Activité douce basée sur une répétition de
                         mouvements qui sollicitent et renforcent les muscles profonds sans douleur afin
@@ -156,15 +146,14 @@
             </div>
             <div class="col-md-6">
                 <div class="course">
-                    <h3>Bodysculpt-Musculation</h3>
+                    <h3>Renfo Training</h3>
                     <p>
-                        Méthode de renforcement musculaire, cette discipline
-                        sportive permet de travailler dynamiquement grâce à des exercices alliant
-                        musculation et cardio. Les exercices proposés permettent de raffermir et de tonifier le
-                        corps.
+                        Séance composée d'enchaînements chronométrés combinés de
+                        travail des bras et des jambes, alternant exercices debout et au sol.
                     </p>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="course">
                     <h3>Renforcement musculaire</h3>
@@ -195,6 +184,18 @@
                         dont le but est de brûler des calories et de se défouler.
                     </p>
                 </div>
-        </div>
+            </div>
+            <div class="col-md-6">
+                <div class="course">
+                    <h3>Renfo Spécial Jambes/Etirements</h3>
+                    <p>
+                        Cours de renforcement musculaire spécifiquement
+                        axé sur le travail des jambes et des muscles fessiers, qui vise à renforcer, tonifier et dessiner
+                        l’ensemble de la jambe. Ce cours est destiné à tous, l’intensité étant variable selon le niveau
+                        des participants, et peut être pratiqué en complément d’une séance de travail « haut du
+                        corps ».Il se termine par une séance d’étirements et de relâchement des muscles.
+                    </p>
+                </div>
+            </div>
     </div>
 @endsection

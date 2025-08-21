@@ -3,31 +3,24 @@
 @section('title', 'Accueil')
 
 @php
-    $aquagym = [
-        'Paul' => 'Aquagym Boussy',
-        'Rémi' => 'Aquagym Boussy',
-    ];
     $animateurs = [
-//        'Eric' => 'Aquagym Brunoy',
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
          Abdo-Fessiers Etirements',
-        'Isabelle' => 'LIA Aérobic, Renforcement Musculaire',
+        'Isabelle' => 'LIA Aérobic, <br> Renfo spécial Jambes/Etirements',
         'Joëlle' => 'Body Zen, Gym Entretien, <br>
-        Stretching Postural, Equilibre et Coordination Séniors, <br>
+        Stretching Postural, <br> Equilibre et Coordination Séniors, <br>
          Taille Abdo-Fessiers',
         'Luckie' => 'Stretching Postural',
         'Mary' => 'Yoga',
         'Nathalie' => 'Souplesse Etirements, Body Zen, <br>
          Gym Détente Méthodes Pilates',
-        'Rose Marie' => 'Gym Douce, Gym Forme, <br>
-        Bodysculpt-Musculation',
+        'Rose Marie' => 'Gym Douce, Renfo Training',
         'Vincent' => 'Gym Musculaire, Gym Tonic, <br>
          Renforcement Musculaire',
-        'Virginie' => 'Yoga Nidra',
+        'Claire' => 'Yoga Nidra',
     ];
     $bureau = [
         'Gabriele MAKKAOUI' => 'Présidente',
-        'Catherine SCHMITT' => 'Vice-Présidente',
         'Michèle FLAMEN' => 'Secrétaire',
         'Michelle ROUSSEAU' => 'Secrétaire Adjointe',
         'Claudine LE CHAUDELEC' => 'Trésorière',
@@ -136,19 +129,20 @@
             </div>
             <div class="mt-4">
                 <p>
-                    Pour répondre aux besoins, aux envies et aux disponibilités de tous, notre programme offre près de 40 heures de cours par semaine
+                    Pour répondre aux besoins, aux envies et aux disponibilités de tous, notre programme offre près de 33 heures de cours par semaine
                     à un prix attractif où chacun peut pratiquer en <strong>" illimité "</strong> (hors options*) différentes disciplines sport-santé telles que :
                 </p>
                 <ul class="fw-bold fs-5 list-unstyled">
-                    <li>Gym Entretien, Gym Form', Gym Tonic</li>
-                    <li>Stretching Postural*, Souplesse-Etirements</li>
+                    <li>Gym Entretien, Gym Tonic</li>
+                    <li>Stretching Postural®*, Souplesse-Etirements</li>
                     <li>Taille Abdos-Fessiers, Gym Musculaire</li>
                     <li>Aquagym*</li>
                     <li>LIA Aérobic</li>
                     <li>Yoga*, Yoga Nidra*, Body Zen, Gym Douce</li>
-                    <li>Dance Move, Gym Méthode Pilates</li>
-                    <li>Bodysculpt-Musculation, Renforcement Musculaire</li>
+                    <li>Dance Move® Type Zumba, Gym Détente Méthode Pilates</li>
+                    <li>Renfo Training, Renforcement Musculaire</li>
                     <li>Equilibre et Coordination Seniors</li>
+                    <li>Renfo spécial Jambes/Etirements</li>
                 </ul>
                 <p>
                     Les cours ont lieu du lundi au samedi midi durant toute
@@ -157,7 +151,7 @@
                     des cours variés et animés, correspondant aux attentes de chacun.
                 </p>
                 <p>
-                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2024-2025</a>
+                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2025-2026</a>
                 </p>
             </div>
         </div>
@@ -191,18 +185,6 @@
                         <p class="text-muted">{!! $description !!}</p>
                     </div>
 
-                @endforeach
-            </div>
-        </div>
-        <h3 class="my-5 text-center">- Animateurs de la Piscine des Sénart</h3>
-        <div class="row">
-            <div class="col-12 d-flex flex-wrap justify-content-center">
-                @foreach($aquagym as $aq => $description)
-                    <div class="p-3 text-center">
-                        <!--<img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $aq }}" width="150" height="150">-->
-                        <h5>{{ $aq }}</h5>
-                        <p class="text-muted">{!! $description !!}</p>
-                    </div>
                 @endforeach
             </div>
         </div>

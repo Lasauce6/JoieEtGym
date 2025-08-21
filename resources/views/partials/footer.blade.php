@@ -24,7 +24,7 @@
                     <a href="{{ route('planning') }}">Le planning</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/garanties-maif.jpg') }}">Assurance MAIF</a>
+                    <a href="{{ asset('/assets/pdf/garanties-maif.pdf') }}">Assurance MAIF</a>
                 </div>
             </div>
             <div class="row">
@@ -42,6 +42,20 @@
                     <a href="{{ asset('/assets/pdf/CR-AG-du-07dec2024.pdf') }}">Compte rendu AG</a>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <a href="{{ asset('/assets/pdf/questionnaire-majeur.pdf') }}">Questionnaire de santé (Majeurs)</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <a href="{{ asset('/assets/pdf/questionnaire-mineur.pdf') }}">Questionnaire de santé (Mineurs)</a>
+                </div>
+            </div>
         </section>
 
         <section class="mb-3 mt-3">
@@ -52,7 +66,7 @@
                     </p>
                     <ul class="list-unstyled">
                         <li class="mb-2">Par courriel : <a href="mailto:joieetgym@gmail.com">joieetgym@gmail.com</a></li>
-                        <li class="mb-2">Par téléphone : <a href="tel:+33160471929">01 60 47 19 29</a> / <a href="tel:+33145987795">01 45 98 77 95</a> (du lundi au vendredi de 14h à 17h)</li>
+                        <li class="mb-2">Par téléphone : <a href="tel:+33160471929">01 60 47 19 29</a> (du lundi au vendredi de 14h à 17h)</li>
                         <li class="mb-2">Par courrier : Mairie d'Epinay-sous-Sénart, 8 Rue Sainte Geneviève - 91860 Epinay-sous-Sénart</li>
                     </ul>
                 </div>
@@ -89,7 +103,7 @@
     >
 
         Site réalisé par <a href="https://raphaelbaticle.fr/" target="_blank">Raphaël Baticle</a> -
-        © 2023 Copyright : Joie et Gymnastique
+        © 2025 Copyright : Joie et Gymnastique
     </div>
 </footer>
 <!-- Footer -->
