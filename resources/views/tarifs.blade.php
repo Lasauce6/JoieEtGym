@@ -10,8 +10,8 @@
                     <h1 class="mb-4">
                         <strong>Tarifs</strong>
                     </h1>
-                    <div class="text-center">
-                        <img src="{{ asset('assets/images/tarifs-2024-2025.png') }}" alt="tarifs-2024-2025" class="img-fluid">
+                    <div class="embed-responsive mx-5">
+                        <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/TARIFS-2025-2026.pdf') }}"></iframe>
                     </div>
                 </div>
             </div>

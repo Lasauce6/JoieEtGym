@@ -15,29 +15,16 @@
                         Les inscriptions peuvent se faire tout au long de l'année
                     </p>
                     <p class="mt-4 text-muted text-center fs-6">
-                        (Les inscriptions en ligne ne sont pas disponibles pour le moment).<br>
-                        Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé.
-                    </p>
-                    <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Bulletin-inscription-2024-2025.pdf') }}"></iframe>
-                    </div>
-                    <p class="mt-4 text-muted text-center fs-6">
-                        Questionnaire de santé <a target="_blank" href="{{ asset('assets/pdf/questionnaire-mineur.pdf') }}">(pour les mineurs (16 à 18 ans) un questionnaire de santé spécifique est à remplir)</a>
-                    </p>
-                    <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/questionnaire-majeur.pdf') }}"></iframe>
-                    </div>
-                    <p class="mt-4 text-muted text-center fs-6">
                         Planning des cours
                     </p>
                     <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/planning2024-2025.pdf') }}"></iframe>
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/planning2025-2026.pdf') }}"></iframe>
                     </div>
                     <p class="mt-4 text-muted text-center fs-6">
                         Dépliant d'informations
                     </p>
                     <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/couvtripti23246.pdf') }}"></iframe>
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/depliant2025.pdf') }}"></iframe>
                     </div>
 
                 </div>
