@@ -11,8 +11,13 @@
                         <strong>Inscription</strong>
                     </h1>
                     <p class="mt-2 text-muted">
-                        Rejoignez-nous dès maintenant !<br>
-                        Les inscriptions peuvent se faire tout au long de l'année
+                        A partir du 1er septembre 2025 <br> <br>
+                        Les inscriptions peuvent se faire toute l'année et uniquement via le site Helloasso. <br>
+                        Le lien sera activé à partir du 1er Septembre <br>
+                        <a href="https://www.helloasso.com/associations/joie-et-gymnastique-au-val-d-yerres/adhesions/bulletin-d-inscription-2025-2026-1" target="_blank">Lien pour s'inscrire</a> <br> <br>
+                        Au moment de votre adhésion, vous devez lire attentivement le questionnaire de santé. <br>
+                        En cas de réponse positive à une ou plusieurs questions, vous devrez nous transmettre un certificat médical de moins de 6 mois <br> <br>
+                        Si vous avez répondu à toutes les questions par la négative, il n'est pas nécessaire de transmettre l'attestation à l'association.
                     </p>
                     <p class="mt-4 text-muted text-center fs-6">
                         Planning des cours
