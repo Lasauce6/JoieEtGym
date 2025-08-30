@@ -18,6 +18,7 @@
         'Vincent' => 'Gym Musculaire, Gym Tonic, <br>
          Renforcement Musculaire',
         'Claire' => 'Yoga Nidra',
+        'Animateur' => 'Aquagym Piscine des Sénart'
     ];
     $bureau = [
         'Gabriele MAKKAOUI' => 'Présidente',

@@ -11,7 +11,7 @@
                         <strong>Tarifs</strong>
                     </h1>
                     <div class="text-center">
-                        <img src="{{ asset('assets/pdf/tarifs-2025-2026.png') }}" alt="tarifs-2024-2025" class="img-fluid">
+                        <img src="{{ asset('assets/pdf/TARIFS-2025-2026.png') }}" alt="tarifs-2025-2026" class="img-fluid">
                     </div>
                 </div>
             </div>
