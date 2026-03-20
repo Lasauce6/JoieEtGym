@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.7",
         "pvtl/voyager-blog": "^0.2.10",
         "spatie/laravel-sitemap": "^6.4",
-        "tcg/voyager": "^1.6"
+        "tcg/voyager": "^1.6",
+        "vlucas/phpdotenv": "^5.6"
     },
     "require-dev": {
         "bennett-treptow/laravel-migration-generator": "^4.3",

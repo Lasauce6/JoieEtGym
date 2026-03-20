@@ -4,28 +4,24 @@
 
 @php
     $animateurs = [
-        'Eric' => 'Aquagym Brunoy',
-        'Paul' => 'Aquagym Boussy',
-        'Rémi' => 'Aquagym Boussy',
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
          Abdo-Fessiers Etirements',
-        'Isabelle' => 'Souplesse-Etirements',
+        'Isabelle' => 'LIA Aérobic, <br> Renfo spécial Jambes/Etirements',
         'Joëlle' => 'Body Zen, Gym Entretien, <br>
-        Stretching Postural, Equilibre et Coordination Séniors, <br>
+        Stretching Postural, <br> Equilibre et Coordination Séniors, <br>
          Taille Abdo-Fessiers',
         'Luckie' => 'Stretching Postural',
         'Mary' => 'Yoga',
         'Nathalie' => 'Souplesse Etirements, Body Zen, <br>
          Gym Détente Méthodes Pilates',
-        'Rose Marie' => 'Gym Douce, Gym Forme, <br>
-        Bodysculpt-Musculation',
+        'Rose Marie' => 'Gym Douce, Renfo Training',
         'Vincent' => 'Gym Musculaire, Gym Tonic, <br>
          Renforcement Musculaire',
-        'Virginie' => 'Yoga Nidra',
+        'Claire' => 'Yoga Nidra',
+        'Animateur' => 'Aquagym Piscine des Sénart'
     ];
     $bureau = [
         'Gabriele MAKKAOUI' => 'Présidente',
-        'Catherine SCHMITT' => 'Vice-Présidente',
         'Michèle FLAMEN' => 'Secrétaire',
         'Michelle ROUSSEAU' => 'Secrétaire Adjointe',
         'Claudine LE CHAUDELEC' => 'Trésorière',
@@ -99,6 +95,12 @@
         </button>
     </div>
 
+    <div class="flash-info text-center py-2" style="background-color: #ffcc00; color: #333;">
+    <a href="{{ route('news.category', ['category' => 'flash-info']) }}" class="flash-link" style="text-decoration: none; color: inherit;">
+        <strong>Flash Info : Cliquez ici pour accéder aux flash infos</strong>
+    </a>
+</div>
+
     <div class="container">
         <h2 class="mt-5 text-center">Notre association :</h2>
         <div class="row align-items-center justify-content-center">
@@ -128,18 +130,20 @@
             </div>
             <div class="mt-4">
                 <p>
-                    Pour répondre aux besoins, aux envies et aux disponibilités de tous, notre programme offre près de 40 heures de cours par semaine
+                    Pour répondre aux besoins, aux envies et aux disponibilités de tous, notre programme offre près de 33 heures de cours par semaine
                     à un prix attractif où chacun peut pratiquer en <strong>" illimité "</strong> (hors options*) différentes disciplines sport-santé telles que :
                 </p>
                 <ul class="fw-bold fs-5 list-unstyled">
-                    <li>Gym Entretien, Gym Form', Gym Tonic</li>
-                    <li>Stretching Postural*, Souplesse-Etirements</li>
+                    <li>Gym Entretien, Gym Tonic</li>
+                    <li>Stretching Postural®*, Souplesse-Etirements</li>
                     <li>Taille Abdos-Fessiers, Gym Musculaire</li>
                     <li>Aquagym*</li>
+                    <li>LIA Aérobic</li>
                     <li>Yoga*, Yoga Nidra*, Body Zen, Gym Douce</li>
-                    <li>Dance Move, Gym Méthode Pilates</li>
-                    <li>Bodysculpt-Musculation, Renforcement Musculaire</li>
+                    <li>Dance Move® Type Zumba, Gym Détente Méthode Pilates</li>
+                    <li>Renfo Training, Renforcement Musculaire</li>
                     <li>Equilibre et Coordination Seniors</li>
+                    <li>Renfo spécial Jambes/Etirements</li>
                 </ul>
                 <p>
                     Les cours ont lieu du lundi au samedi midi durant toute
@@ -148,7 +152,7 @@
                     des cours variés et animés, correspondant aux attentes de chacun.
                 </p>
                 <p>
-                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2023-2024</a>
+                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2025-2026</a>
                 </p>
             </div>
         </div>
@@ -171,27 +175,26 @@
             </div>
         </div>
 
-        <h2 class="my-5 text-center">Nos Animateurs</h2>
+        <h2 class="my-5 text-center">- Nos Animateurs</h2>
         <div class="row">
             <!-- Animateurs -->
             <div class="col-12 d-flex flex-wrap justify-content-center">
                 @foreach($animateurs as $animateur => $description)
                     <div class="p-3 text-center">
-{{--                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">--}}
-                        <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
+                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
                         <h5>{{ $animateur }}</h5>
                         <p class="text-muted">{!! $description !!}</p>
                     </div>
+
                 @endforeach
             </div>
         </div>
 
-        <h2 class="my-5 text-center">Les Membres du Bureau</h2>
+        <h2 class="my-5 text-center">- Les Membres du Bureau</h2>
         <div class="row">
             <div class="col-12 d-flex flex-wrap justify-content-center">
                 @foreach($bureau as $membre => $role)
                     <div class="p-3 text-center">
-{{--                        <img src="{{ asset('/assets/images/bureau/'.$membre.'.jpg') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">--}}
                         <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">
                         <h5>{{ $membre }}</h5>
                         <p class="text-muted">{{ $role }}</p>

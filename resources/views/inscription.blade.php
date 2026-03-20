@@ -11,33 +11,25 @@
                         <strong>Inscription</strong>
                     </h1>
                     <p class="mt-2 text-muted">
-                        Rejoignez-nous dès maintenant !<br>
-                        Les inscriptions peuvent se faire tout au long de l'année
+                        A partir du 1er septembre 2025 <br> <br>
+                        Les inscriptions peuvent se faire toute l'année et uniquement via le site Helloasso. <br>
+                        Le lien sera activé à partir du 1er Septembre <br>
+                        <a href="https://www.helloasso.com/associations/joie-et-gymnastique-au-val-d-yerres/adhesions/bulletin-d-inscription-2025-2026-1" target="_blank">Lien pour s'inscrire</a> <br> <br>
+                        Au moment de votre adhésion, vous devez lire attentivement le questionnaire de santé. <br>
+                        En cas de réponse positive à une ou plusieurs questions, vous devrez nous transmettre un certificat médical de moins de 6 mois <br> <br>
+                        Si vous avez répondu à toutes les questions par la négative, il n'est pas nécessaire de transmettre l'attestation à l'association.
                     </p>
-                    <p class="mt-4 text-muted text-center fs-6">
-                        (Les inscriptions en ligne ne sont pas disponibles pour le moment).<br>
-                        Vous pouvez télécharger le bulletin d'inscription et le questionnaire de santé.
-                    </p>
-                    <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame1" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Bulletin-inscription-2023-2024.pdf') }}"></iframe>
-                    </div>
-                    <p class="mt-4 text-muted text-center fs-6">
-                        Questionnaire de santé
-                    </p>
-                    <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/Questionnaire-2023-2024.pdf') }}"></iframe>
-                    </div>
                     <p class="mt-4 text-muted text-center fs-6">
                         Planning des cours
                     </p>
                     <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/PLANNING-2023-24.pdf') }}"></iframe>
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/planning2025-2026.pdf') }}"></iframe>
                     </div>
                     <p class="mt-4 text-muted text-center fs-6">
                         Dépliant d'informations
                     </p>
                     <div class="embed-responsive mx-5">
-                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/couvtripti23246.pdf') }}"></iframe>
+                        <iframe id="pdfFrame2" class="embed-responsive-item w-100" src="{{ asset('assets/pdf/depliant2025.pdf') }}"></iframe>
                     </div>
 
                 </div>

@@ -18,8 +18,13 @@ class BlogPost extends Model implements Sitemapable
 
     public function link(): string
     {
+        if (!$this->category)
+        {
+            return url('/news/');
+        }
         return url('/news/' . $this->category->slug . '/' . $this->slug);
     }
+
     public function image(){
         return Voyager::image($this->image);
     }
@@ -60,12 +65,20 @@ class BlogPost extends Model implements Sitemapable
         return $this->belongsTo(Voyager::modelClass('Category'));
     }
 
+
     public function toSitemapTag(): Url|string|array
     {
+        if (!$this->category) {
+            // Vous pouvez retourner une URL par défaut ou lever une exception
+            return Url::create('/news/' . $this->slug)
+                ->setLastModificationDate($this->updated_at)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.8);
+        }
+
         return Url::create('/news/' . $this->category->slug . '/' . $this->slug)
             ->setLastModificationDate($this->updated_at)
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
             ->setPriority(0.8);
-
     }
 }

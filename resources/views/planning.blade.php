@@ -29,7 +29,7 @@
         <div id='calendar' style="display: none"></div>
 
         <div class="mt-5 text-center">
-            <a href="{{ asset('assets/pdf/PLANNING-2023-24.pdf') }}">Télécharger le planning</a>
+            <a href="{{ asset('assets/pdf/planning2024-2025.pdf') }}">Télécharger le planning</a>
         </div>
 
 
@@ -114,17 +114,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center align-items-center">
-                <div class="card mt-2" style="width: 18rem;">
-                    <img src="{{ asset('/assets/images/cards/Piscine_Brunoy.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La Piscine Yves Moreau<br>
-                            Brunoy</h5>
-                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>
-                        {{--                        <p class="card-text text-muted">(En attente)</p>--}}
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col d-flex justify-content-center align-items-center">--}}
+{{--                <div class="card mt-2" style="width: 18rem;">--}}
+{{--                    <img src="{{ asset('/assets/images/cards/Piscine_Brunoy.jpg') }}" class="card-img-top" alt="...">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <h5 class="card-title">La Piscine Yves Moreau<br>--}}
+{{--                            Brunoy</h5>--}}
+{{--                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>--}}
+{{--                        --}}{{--                        <p class="card-text text-muted">(En attente)</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             {{--            <div class="col d-flex justify-content-center align-items-center">--}}
             {{--                <div class="card mt-2" style="width: 18rem;">--}}
             {{--                    <img src="{{ asset('/assets/images/cards/Piscine_Epinay.jpg') }}" class="card-img-top" alt="...">--}}
@@ -190,9 +190,11 @@
                     calendarEl.style.display = '';
 
                     const googleMapsScript = document.createElement('script');
-                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyASp72IjHskwrcCWyhdFsixQxTICadnwLE&libraries=places&callback=initMap`;
+                    let apikey = "{{ env('GOOGLE_API_KEY') }}";
+                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&libraries=places&callback=initMap`;
                     googleMapsScript.defer = true;
                     document.head.appendChild(googleMapsScript);
+
 
                 const calendar = new FullCalendar.Calendar(calendarEl, {
                     initialDate: startOfWeek,
