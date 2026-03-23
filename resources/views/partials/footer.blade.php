@@ -24,7 +24,7 @@
                     <a href="{{ route('planning') }}">Le planning</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/ANNEXE-1-Résumé-garanties-MAIF-23-24.pdf') }}">Assurance MAIF</a>
+                    <a href="{{ asset('/assets/pdf/garanties-maif.pdf') }}">Assurance MAIF</a>
                 </div>
             </div>
             <div class="row">
@@ -32,14 +32,28 @@
                     <a href="{{ route('inscription') }}">Nous rejoindre</a>
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/Assurance-IA-Sports2023-06-16-IJ-n°169-CLUBS-1.pdf') }}">Assurance complémentaire IA Sports</a>
+                    <a href="{{ asset('/assets/pdf/SOUSCRIPTION-IA-SPORT.pdf') }}">Assurance complémentaire IA Sports</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                 </div>
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/CR-AG-du-25nov2023.pdf') }}">Compte rendu AG</a>
+                    <a href="{{ asset('/assets/pdf/CR-AG-du-07dec2024.pdf') }}">Compte rendu AG</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <a href="{{ asset('/assets/pdf/questionnaire-majeur.pdf') }}">Questionnaire de santé (Majeurs)</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <a href="{{ asset('/assets/pdf/questionnaire-mineur.pdf') }}">Questionnaire de santé (Mineurs)</a>
                 </div>
             </div>
         </section>
@@ -48,9 +62,13 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <p>
-                        N'hésitez pas à nous contacter par courriel : <a href="mailto:joieetgym@gmail.com">joieetgym@gmail.com</a>
-                        ou par téléphone : <a href="tel:+33160471929">01 60 47 19 29</a> / <a href="tel:+33145987795">01 45 98 77 95</a>, uniquement du lundi au vendredi de 14h à 17h.
+                        Vous pouvez nous contacter :
                     </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Par courriel : <a href="mailto:joieetgym@gmail.com">joieetgym@gmail.com</a></li>
+                        <li class="mb-2">Par téléphone : <a href="tel:+33160471929">01 60 47 19 29</a> (du lundi au vendredi de 14h à 17h)</li>
+                        <li class="mb-2">Par courrier : Mairie d'Epinay-sous-Sénart, 8 Rue Sainte Geneviève - 91860 Epinay-sous-Sénart</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -85,7 +103,7 @@
     >
 
         Site réalisé par <a href="https://raphaelbaticle.fr/" target="_blank">Raphaël Baticle</a> -
-        © 2023 Copyright : Joie et Gymnastique
+        © 2025 Copyright : Joie et Gymnastique
     </div>
 </footer>
 <!-- Footer -->

@@ -16,6 +16,12 @@
                         <a class="nav-link {{ request()->is('/') ? 'text-secondary' : 'text-dark' }}" href="{{ route('index') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ request()->is('courses') ? 'text-secondary' : 'text-dark' }}" href="{{ route('cours') }}">Les cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('tarifs') ? 'text-secondary' : 'text-dark' }}" href="{{ route('tarifs') }}">Tarifs</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ request()->is('news') ? 'text-secondary' : 'text-dark' }}" href="{{ route('news') }}">Actualités</a>
                     </li>
                     <li class="nav-item">

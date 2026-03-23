@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Joie Et Gym</h1>
-    <p align="center"><a href="#" target="_blank"><img src="https://raw.githubusercontent.com/Lasauce6/JoieEtGym/master/public/assets/images/logob.png" width="250" alt="Logo Joie et Gym"></a></p>
+    <p align="center"><a href="#" target="_blank"><img src="https://raw.githubusercontent.com/Lasauce6/JoieEtGym/master/public/assets/images/logo.png" width="250" alt="Logo Joie et Gym"></a></p>
     <p>Web site for the association Joie et Gymnastique </p>
 </div>
 

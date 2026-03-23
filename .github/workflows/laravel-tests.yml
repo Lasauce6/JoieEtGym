@@ -18,7 +18,7 @@ jobs:
       # Label used to access the service container
       mysql:
         # Docker Hub image (also with version)
-        image: mysql:latest
+        image: mysql:5.7.36
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
           MYSQL_DATABASE:  joieetgym
@@ -28,9 +28,10 @@ jobs:
         # Set health checks to wait until mysql database has started (it takes some seconds to start)
         options: >-
           --health-cmd="mysqladmin ping"
-          --health-interval=10s
+          --health-interval=5s
           --health-timeout=5s
-          --health-retries=3
+          --health-retries=50
+          --health-start-period 150s
 
     strategy:
       matrix:
@@ -110,7 +111,7 @@ jobs:
 
 
     - uses: symfonycorp/security-checker-action@v4
-    
+
     - name: Browser Test - upgrade and start Chrome Driver
       run: |
         composer require --dev laravel/dusk

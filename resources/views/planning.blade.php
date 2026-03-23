@@ -5,245 +5,21 @@
 @section('content')
     <div class="container-md mt-5">
         <h2 class="text-center">Planning des cours</h2>
-{{--        <div class="card mb-5">--}}
-{{--            <table class="table table-striped-columns">--}}
-{{--                <thead>--}}
-{{--                <tr>--}}
-{{--                    <th class="col">Jour</th>--}}
-{{--                    <th class="col">Lieu</th>--}}
-{{--                    <th class="col">Heure</th>--}}
-{{--                    <th class="col">Cours</th>--}}
-{{--                    <th class="col">Enseignant</th>--}}
-{{--                </tr>--}}
-{{--                </thead>--}}
-{{--                <tbody>--}}
-{{--                <!-- Lundi -->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="8">Lundi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td rowspan="2">Souplesse-Etirements</td>--}}
-{{--                    <td rowspan="2">Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h15-11h15</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>18h00-19h00</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                    <td rowspan="2">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h10-20h10</td>--}}
-{{--                    <td>Taille Abdo-Fessiers</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="3">BOUSSY La Ferme--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Tonic</td>--}}
-{{--                    <td rowspan="2">Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h00-11h00</td>--}}
-{{--                    <td>Gym Musculaire</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>14h00-15h00</td>--}}
-{{--                    <td>Body Zen</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <!--Mardi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="11">Mardi</th>--}}
-{{--                    <td rowspan="2">EPINAY Sénart-Club</td>--}}
-{{--                    <td>18h15-19h15</td>--}}
-{{--                    <td>Gym Form</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h20-20h20</td>--}}
-{{--                    <td>Step</td>--}}
-{{--                    <td>Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>EPINAY Piscine Bonningue</td>--}}
-{{--                    <td>12h15-13h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="5">BOUSSY La Ferme</td>--}}
-{{--                    <td>10h00-10h45</td>--}}
-{{--                    <td rowspan="2">Gym Entretien</td>--}}
-{{--                    <td rowspan="3">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h45-11h30</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>14h00-17h15</td>--}}
-{{--                    <td rowspan="2">Yoga</td>--}}
-{{--                    <td rowspan="2">Mary</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>15h45-17h15</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Cosec</td>--}}
-{{--                    <td>20h45-21h45</td>--}}
-{{--                    <td>Dance Move/Abdo-Fessiers</td>--}}
-{{--                    <td>Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="2">VARENNES JARCY</td>--}}
-{{--                    <td>19h00-20h00</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                    <td rowspan="2">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>20h05-21h05</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                </tr>--}}
-{{--                <!--Mercredi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="6">Mercredi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Douce</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Stretching Postural</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>19h30-20h30</td>--}}
-{{--                    <td>Dance Move</td>--}}
-{{--                    <td rowspan="2">Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>20h30-21h30</td>--}}
-{{--                    <td>Abdo-Fessiers Etirements</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>VARENNES JARCY</td>--}}
-{{--                    <td>09h15-10h15</td>--}}
-{{--                    <td>Gym Musculaire</td>--}}
-{{--                    <td>Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <!--Jeudi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="8">Jeudi</th>--}}
-{{--                    <td rowspan="4">EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Form</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h15-11h15</td>--}}
-{{--                    <td>Body Zen</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h30-12h30</td>--}}
-{{--                    <td>Streching Postural</td>--}}
-{{--                    <td>Luckie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>18h00-19h00</td>--}}
-{{--                    <td>Bodysculp-Musculation</td>--}}
-{{--                    <td>Rose-Marie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>EPINAY Piscine Bonningue</td>--}}
-{{--                    <td>12h30-13h15</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Lamartine</td>--}}
-{{--                    <td>18h30-19h30</td>--}}
-{{--                    <td>Gym Détente Méthodes Pilates</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Cosec</td>--}}
-{{--                    <td>20h45-21h45</td>--}}
-{{--                    <td>Dance Move</td>--}}
-{{--                    <td rowspan="2">Fabrice</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>VARENNES JARCY</td>--}}
-{{--                    <td>19h20-20h20</td>--}}
-{{--                    <td>Gym Entretien</td>--}}
-{{--                </tr>--}}
-{{--                <!--Vendredi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="4">Vendredi</th>--}}
-{{--                    <td>EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h30-10h30</td>--}}
-{{--                    <td>Gym Détente Méthode Pilates</td>--}}
-{{--                    <td>Nathalie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="2">BOUSSY La Ferme</td>--}}
-{{--                    <td>09h15-10h15</td>--}}
-{{--                    <td>Renforcement Musculaire</td>--}}
-{{--                    <td>Vincent</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>13h45-14h45</td>--}}
-{{--                    <td>Gym Douce</td>--}}
-{{--                    <td>Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>BOUSSY Piscine Sénarts</td>--}}
-{{--                    <td>11h15-12h00</td>--}}
-{{--                    <td>Aquagym</td>--}}
-{{--                    <td></td>--}}
-{{--                </tr>--}}
-{{--                <!--Samedi-->--}}
-{{--                <tr>--}}
-{{--                    <th rowspan="4">Samedi</th>--}}
-{{--                    <td>EPINAY Sénart-Club</td>--}}
-{{--                    <td>09h30-10h30</td>--}}
-{{--                    <td>Yoga</td>--}}
-{{--                    <td>Virginie</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td rowspan="3">BOUSSY La Ferme</td>--}}
-{{--                    <td>09h00-10h00</td>--}}
-{{--                    <td>Gym Tonic</td>--}}
-{{--                    <td rowspan="3">Joelle</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>10h00-11h00</td>--}}
-{{--                    <td>Etirements</td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td>11h00-12h00</td>--}}
-{{--                    <td>Streching Postural</td>--}}
-{{--                </tr>--}}
-{{--                </tbody>--}}
-{{--            </table>--}}
-{{--        </div>--}}
+        <style>
+
+        </style>
+
+        <div class="mt-4 text-center d-flex fs-6 container justify-content-center">
+            <p class="city orange">Boussy-Saint-Antoine</p>
+            <p class="city vert">Epinay-sous-Sénart</p>
+            <p class="city jaune">Varennes Jarcy</p>
+            <p class="city bleu">Aquagym</p>
+        </div>
+        <div class="text-muted text-center">
+            <p>cliquez sur le cours pour accéder au lieu de la séance</p>
+        </div>
+
+
         <div id="loader" class="text-center mt-5">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Chargement...</span>
@@ -251,6 +27,115 @@
         </div>
 
         <div id='calendar' style="display: none"></div>
+
+        <div class="mt-5 text-center">
+            <a href="{{ asset('assets/pdf/planning2024-2025.pdf') }}">Télécharger le planning</a>
+        </div>
+
+
+        <div class="row align-items-center justify-content-center mt-5">
+            <p class="text-center lead"><strong>Les municipalités d'Epinay-sous-Sénart, Boussy-Saint-Antoine et Varennes-Jarcy, mettent des salles à notre disposition :</strong></p>
+        </div>
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/La_Ferme_Boussy.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">La Ferme<br>
+                            Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/gGfTc2QzfftbktuA7" target="_blank">Chemin de la Ferme, 91800 Boussy-Saint-Antoine</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Gymnase_Cosec_Boussy.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Le gymnase COSEC<br>
+                            Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/zEAnWVE337FJbAwN7" target="_blank">10 Rue des Glaises, 91800 Boussy-Saint-Antoine</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Sénart_Club_Epinay.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">La salle du Sénart-Club<br>
+                            Epinay-Sous-Sénart</h5>
+                        <a href="https://maps.app.goo.gl/1JukNH1uT6JnREWQ7" target="_blank">40 bis Rue de la Croix Rochopt, 91860 Épinay-sous-Sénart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Ancienne_Mairie_Epinay.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">L'ancienne Mairie<br>
+                            Epinay-Sous-Sénart</h5>
+                        <a href="https://maps.app.goo.gl/tKt7BRZucLZwiYz16" target="_blank">17 Rue de Boussy, 91860 Épinay-sous-Sénart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Mairie_Varennes.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Salle à la Mairie<br>
+                            Varennes-Jarcy</h5>
+                        <a href="https://maps.app.goo.gl/QBiZNktZTygX3X6N7" target="_blank">2 Pl. Aristide Briand, 94520 Varennes-Jarcy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Gymnase_Antonins_Boussy.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Salle des Antonins<br>
+                            Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/PQB1ScaQJqVS35KKA" target="_blank">Les Friches, 91800 Boussy-Saint-Antoine</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center mt-5">
+            <p class="text-center lead"><strong>Les séances de Gym Aquatique se déroulent :</strong></p>
+        </div>
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card mt-2" style="width: 18rem;">
+                    <img src="{{ asset('/assets/images/cards/Piscine_Senart_Boussy.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">La Piscine des Sénarts<br>
+                            Boussy-Saint-Antoine</h5>
+                        <a href="https://maps.app.goo.gl/ad63VqWYpqdfGrde9" target="_blank">1 Rue de Rochopt, 91800 Boussy-Saint-Antoine</a>
+                    </div>
+                </div>
+            </div>
+{{--            <div class="col d-flex justify-content-center align-items-center">--}}
+{{--                <div class="card mt-2" style="width: 18rem;">--}}
+{{--                    <img src="{{ asset('/assets/images/cards/Piscine_Brunoy.jpg') }}" class="card-img-top" alt="...">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <h5 class="card-title">La Piscine Yves Moreau<br>--}}
+{{--                            Brunoy</h5>--}}
+{{--                        <a href="https://maps.app.goo.gl/aaH3EFLU6PVHqzuYA" target="_blank">4 Av. de Soulins, 91800 Brunoy</a>--}}
+{{--                        --}}{{--                        <p class="card-text text-muted">(En attente)</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+            {{--            <div class="col d-flex justify-content-center align-items-center">--}}
+            {{--                <div class="card mt-2" style="width: 18rem;">--}}
+            {{--                    <img src="{{ asset('/assets/images/cards/Piscine_Epinay.jpg') }}" class="card-img-top" alt="...">--}}
+            {{--                    <div class="card-body">--}}
+            {{--                        <h5 class="card-title">La Piscine Pierre Bonningue<br>--}}
+            {{--                            Epinay-Sous-Sénart</h5>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+        </div>
+
         <!-- Fenêtre modale pour afficher les détails de l'événement -->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -285,8 +170,7 @@
                 streetViewControl: false,
                 disableDefaultUI: true,
             });
-
-            const marker = new google.maps.Marker({
+            new google.maps.Marker({
                 position: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
                 map: eventMap
             });
@@ -306,9 +190,11 @@
                     calendarEl.style.display = '';
 
                     const googleMapsScript = document.createElement('script');
-                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyASp72IjHskwrcCWyhdFsixQxTICadnwLE&libraries=places&callback=initMap`;
+                    let apikey = "{{ env('GOOGLE_API_KEY') }}";
+                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&libraries=places&callback=initMap`;
                     googleMapsScript.defer = true;
                     document.head.appendChild(googleMapsScript);
+
 
                 const calendar = new FullCalendar.Calendar(calendarEl, {
                     initialDate: startOfWeek,
@@ -345,8 +231,10 @@
                     events: data,
                     eventClick: function (info) {
                         $('#eventModal .modal-title').text(info.event.title);
-                        $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr', {weekday: 'long', hour: 'numeric', minute: '2-digit'}) + ' - ' + info.event.end.toLocaleString('fr', {hour: 'numeric', minute: '2-digit'}));
-                        $('#eventModal .modal-description').text("Professeur : " + info.event.extendedProps.description);
+                        $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr-FR', { timeZone: 'GMT', weekday: 'long', hour: 'numeric', minute: '2-digit' })
+                            + ' - '
+                            + info.event.end.toLocaleString('fr-FR', { timeZone: 'GMT', hour: 'numeric', minute: '2-digit' }));
+                        $('#eventModal .modal-description').html(info.event.extendedProps.description);
                         $('#eventModal .modal-location').text("Lieu : " + info.event.extendedProps.location);
                         initMap(info.event.extendedProps.latitude, info.event.extendedProps.longitude);
                         $('#eventModal').modal('show');
