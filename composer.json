@@ -15,7 +15,8 @@
         "mohammedmanssour/laravel-recurring-models": "^0.6.0",
         "saade/filament-fullcalendar": "^3.0",
         "spatie/laravel-permission": "^6.25",
-        "spatie/laravel-sitemap": "^7.3"
+        "spatie/laravel-sitemap": "^7.3",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "bennett-treptow/laravel-migration-generator": "^4.3",
