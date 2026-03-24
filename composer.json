@@ -7,12 +7,15 @@
     "require": {
         "php": "^8.0.2",
         "filament/filament": "^3.2",
-        "google/apiclient": "^2.15",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.10",
         "illuminate/support": "^10.45",
         "laravel/framework": "^10.48",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "mohammedmanssour/laravel-recurring-models": "^0.6.0",
+        "saade/filament-fullcalendar": "^3.0",
+        "spatie/laravel-permission": "^6.25",
+        "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
         "bennett-treptow/laravel-migration-generator": "^4.3",
