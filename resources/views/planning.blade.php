@@ -5,9 +5,6 @@
 @section('content')
     <div class="container-md mt-5">
         <h2 class="text-center">Planning des cours</h2>
-        <style>
-
-        </style>
 
         <div class="mt-4 text-center d-flex fs-6 container justify-content-center">
             <p class="city orange">Boussy-Saint-Antoine</p>
@@ -146,6 +143,7 @@
                     </div>
                     <div class="modal-body">
                         <p class="modal-horaires text-muted"></p>
+                        <div class="modal-animator mb-3"></div>
                         <p class="modal-description"></p>
                         <p class="modal-location"></p>
                         <div id="eventMap" style="width: 100%; height: 300px;"></div>
@@ -160,20 +158,34 @@
 @endsection
 
 @section('scripts')
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+
     <script>
         window.initMap = function(latitude, longitude) {
-            const eventMap = new google.maps.Map(document.getElementById('eventMap'), {
-                center: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
-                zoom: 14,
-                streetViewControl: false,
-                disableDefaultUI: true,
-            });
-            new google.maps.Marker({
-                position: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
-                map: eventMap
-            });
+            const mapDiv = document.getElementById('eventMap');
+            mapDiv.innerHTML = '';
+
+            if (!latitude || !longitude || isNaN(parseFloat(latitude))) {
+                mapDiv.innerHTML = '<p class="text-center text-muted p-4">Adresse non trouvée.</p>';
+                return;
+            }
+
+            const map = L.map('eventMap').setView([parseFloat(latitude), parseFloat(longitude)], 15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([parseFloat(latitude), parseFloat(longitude)]).addTo(map);
         };
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -189,59 +201,65 @@
                     loaderEl.style.display = 'none';
                     calendarEl.style.display = '';
 
-                    const googleMapsScript = document.createElement('script');
-                    let apikey = "{{ env('GOOGLE_API_KEY') }}";
-                    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&libraries=places&callback=initMap`;
-                    googleMapsScript.defer = true;
-                    document.head.appendChild(googleMapsScript);
+                    const calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialDate: startOfWeek,
+                        initialView: 'timeGridSixDays',
+                        timeZone: 'Europe/Paris',
+                        locale: 'fr',
+                        headerToolbar: { start: '', center: '', end: '' },
+                        views: {
+                            timeGridSixDays: {
+                                type: 'timeGrid',
+                                duration: { days: 6 },
+                                buttonText: '6 jours'
+                            }
+                        },
+                        dayHeaderContent: function (arg) {
+                            return arg.date.toLocaleString('fr', { weekday: 'long' });
+                        },
+                        slotLabelFormat: { hour: 'numeric', minute: '2-digit', omitZeroMinute: false, meridiem: 'short' },
+                        slotMinTime: '08:30:00',
+                        slotMaxTime: '22:30:00',
+                        allDaySlot: false,
+                        slotDuration: '00:15:00',
+                        slotEventOverlap: false,
+                        height: '1460px',
+                        events: data,
+                        eventClick: function (info) {
+                            const event = info.event.extendedProps;
+                            $('#eventModal .modal-title').text(info.event.title);
+                            $('#eventModal .modal-horaires').text(
+                                info.event.start.toLocaleString('fr', {weekday: 'long', hour: 'numeric', minute: '2-digit'}) +
+                                ' - ' +
+                                info.event.end.toLocaleString('fr', {hour: 'numeric', minute: '2-digit'})
+                            );
 
+                            let animatorHtml = '';
+                            if (event.animators && event.animators.length > 0) {
+                                animatorHtml = '<div class="animators-list mb-3"> <p>Animateurs :</p>';
 
-                const calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialDate: startOfWeek,
-                    initialView: 'timeGridSixDays',
-                    timeZone: 'Europe/Paris',
-                    locale: 'fr',
-                    headerToolbar: {
-                        start: '',
-                        center: '',
-                        end: ''
-                    },
-                    views: {
-                        timeGridSixDays: {
-                            type: 'timeGrid',
-                            duration: {days: 6},
-                            buttonText: '6 jours'
+                                event.animators.forEach(function(animator) {
+                                    animatorHtml += `
+                <div class="d-flex align-items-center mb-2">
+                    <img src="${animator.photo}" alt="${animator.name}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                    <div>
+                        <strong class="small">${animator.name}</strong>
+                        ${animator.bio ? `<p class="mb-0 text-muted" style="font-size: 0.75rem">${animator.bio}</p>` : ''}
+                    </div>
+                </div>
+            `;
+                                });
+
+                                animatorHtml += '</div>';
+                            }
+                            $('#eventModal .modal-animator').html(animatorHtml);
+                            $('#eventModal .modal-location').text("Lieu : " + event.location);
+                            initMap(event.latitude, event.longitude);
+                            $('#eventModal').modal('show');
                         }
-                    },
-                    dayHeaderContent: function (arg) {
-                        return arg.date.toLocaleString('fr', {weekday: 'long'});
-                    },
-                    slotLabelFormat: {
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        omitZeroMinute: false,
-                        meridiem: 'short'
-                    },
-                    slotMinTime: '08:30:00',
-                    slotMaxTime: '22:30:00',
-                    allDaySlot: false,
-                    slotDuration: '00:15:00',
-                    slotEventOverlap: false,
-                    height: '1460px',
-                    events: data,
-                    eventClick: function (info) {
-                        $('#eventModal .modal-title').text(info.event.title);
-                        $('#eventModal .modal-horaires').text(info.event.start.toLocaleString('fr-FR', { timeZone: 'GMT', weekday: 'long', hour: 'numeric', minute: '2-digit' })
-                            + ' - '
-                            + info.event.end.toLocaleString('fr-FR', { timeZone: 'GMT', hour: 'numeric', minute: '2-digit' }));
-                        $('#eventModal .modal-description').html(info.event.extendedProps.description);
-                        $('#eventModal .modal-location').text("Lieu : " + info.event.extendedProps.location);
-                        initMap(info.event.extendedProps.latitude, info.event.extendedProps.longitude);
-                        $('#eventModal').modal('show');
-                    }
-                });
+                    });
 
-                calendar.render();
+                    calendar.render();
                 })
                 .catch(error => {
                     console.error('Erreur lors du chargement des données', error);

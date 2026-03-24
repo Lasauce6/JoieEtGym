@@ -1,8 +1,23 @@
 .city { margin-right: 5px; padding: 5px 10px; border-radius: 5px; }
-.orange { background-color: #F4511EFF; }
-.vert { background-color: #33B679FF; }
-.jaune { background-color: #F6BF26FF; }
-.bleu { background-color: #4285f4; }
+.orange { background-color: #f97316; }
+.vert { background-color: #22c55e; }
+.jaune { background-color: #eab308; }
+.bleu { background-color: #3b82f6; }
+
+.post-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .pagination {
     --bs-pagination-active-bg: #4285f4 !important;

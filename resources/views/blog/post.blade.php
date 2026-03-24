@@ -28,7 +28,7 @@
                     <div class="text-center mt-5">
                         <img class="img-fluid rounded" src="{{ $post->image() }}" alt="{{ $post->title }}" srcset="{{ $post->image() }}">
                     </div>
-                    <div class="mx-auto mt-4 text-break post-body text-justify">
+                    <div class="mt-5 post-content">
                         {!! $post->body !!}
                     </div>
                 </div>

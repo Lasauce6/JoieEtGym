@@ -3,39 +3,28 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\Sitemap\Contracts\Sitemapable;
-use Spatie\Sitemap\Tags\Url;
-use TCG\Voyager\Traits\Translatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
-class Category extends Model implements Sitemapable
+class Category extends Model
 {
-    use Translatable;
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
 
-    protected array $translatable = ['slug', 'name'];
 
-    protected $table = 'categories';
-
-    protected $fillable = ['slug', 'name'];
-
-    public function posts()
+    protected static function booted(): void
     {
-        return $this->hasMany(BlogPost::class, 'category_id', 'id')
-            ->published()
-            ->orderBy('created_at', 'DESC');
+        static::creating(function (self $category) {
+            if (empty($category->slug)) {
+                $category->slug = Str::slug($category->name);
+            }
+        });
     }
 
-    public function parentId(): BelongsTo
+    public function posts(): HasMany
     {
-        return $this->belongsTo(self::class);
-    }
-
-    public function toSitemapTag(): Url|string|array
-    {
-        return Url::create(route('news.category', $this->slug))
-            ->setLastModificationDate($this->updated_at)
-            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-            ->setPriority(0.8);
-
+        return $this->hasMany(Post::class);
     }
 }

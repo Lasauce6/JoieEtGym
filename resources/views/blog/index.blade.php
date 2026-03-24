@@ -52,8 +52,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer bg-light d-flex align-items-center">
-                                    <img class="rounded-circle me-3" src="{{ asset('storage/' . $post->user->avatar) }}" alt="" style="width: 40px; height: 40px;">
-                                    <div>
+                                    <img class="rounded-circle me-3" src="{{ $post->user->avatar_url }}" alt="{{ $post->user->name }}" style="width: 40px; height: 40px;">                                    <div>
                                         <p class="mb-0 small font-weight-medium">
                                             Écrit par <strong>{{ $post->user->name }}</strong>
                                         </p>
