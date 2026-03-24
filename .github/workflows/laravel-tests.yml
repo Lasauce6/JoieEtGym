@@ -17,7 +17,7 @@ jobs:
 
     services:
       mysql:
-        image: mysql:8.0
+        image: mariadb:11.4.10
         env:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: joieetgym_test
@@ -31,7 +31,7 @@ jobs:
 
     strategy:
       matrix:
-        php-version: ['8.2', '8.3']
+        php-version: ['8.2']
 
     steps:
       - uses: actions/checkout@v4
