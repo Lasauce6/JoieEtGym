@@ -11,7 +11,7 @@
         "illuminate/support": "^10.45",
         "laravel/framework": "^10.48",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7",
+        "laravel/tinker": "^3.0",
         "mohammedmanssour/laravel-recurring-models": "^0.6.0",
         "saade/filament-fullcalendar": "^3.0",
         "spatie/laravel-permission": "^6.25",
