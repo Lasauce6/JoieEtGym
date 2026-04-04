@@ -169,31 +169,53 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
     <script>
-        window.initMap = function(latitude, longitude) {
-            const mapDiv = document.getElementById('eventMap');
-            mapDiv.innerHTML = '';
+        let map = null;
+        let marker = null;
 
+        function initMap() {
+            if (map) return;
+
+            map = L.map('eventMap', {
+                center: [48.7, 2.5],
+                zoom: 15,
+                zoomControl: false,
+                dragging: false
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+            }).addTo(map);
+        }
+
+        function updateMapMarker(latitude, longitude) {
             if (!latitude || !longitude || isNaN(parseFloat(latitude))) {
-                mapDiv.innerHTML = '<p class="text-center text-muted p-4">Adresse non trouvée.</p>';
+                document.getElementById('eventMap').innerHTML = '<p class="text-center text-muted p-4">Adresse non trouvée.</p>';
+                map = null;
                 return;
             }
 
-            const map = L.map('eventMap').setView([parseFloat(latitude), parseFloat(longitude)], 15);
+            initMap();
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+            const latLng = [parseFloat(latitude), parseFloat(longitude)];
 
-            L.marker([parseFloat(latitude), parseFloat(longitude)]).addTo(map);
-        };
+            if (marker) {
+                marker.setLatLng(latLng);
+            } else {
+                marker = L.marker(latLng).addTo(map);
+            }
+
+            map.setView(latLng, 15);
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const currentDate = new Date();
-            const startOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + (currentDate.getDay() === 0 ? -6 : 1)));
+            const startOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDate() + (currentDate.getDay() === 0 ? -6 : 1)));
 
             const calendarEl = document.getElementById('calendar');
             const loaderEl = document.getElementById('loader');
+
+            initMap();
 
             fetch('/load-planning')
                 .then(response => response.json())
@@ -237,24 +259,23 @@
                             let animatorHtml = '';
                             if (event.animators && event.animators.length > 0) {
                                 animatorHtml = '<div class="animators-list mb-3"> <p>Animateurs :</p>';
-
                                 event.animators.forEach(function(animator) {
                                     animatorHtml += `
-                <div class="d-flex align-items-center mb-2">
-                    <img src="${animator.photo}" alt="${animator.name}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
-                    <div>
-                        <strong class="small">${animator.name}</strong>
-                        ${animator.bio ? `<p class="mb-0 text-muted" style="font-size: 0.75rem">${animator.bio}</p>` : ''}
-                    </div>
-                </div>
-            `;
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="${animator.photo}" alt="${animator.name}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                            <div>
+                                                <strong class="small">${animator.name}</strong>
+                                                ${animator.bio ? `<p class="mb-0 text-muted" style="font-size: 0.75rem">${animator.bio}</p>` : ''}
+                                            </div>
+                                        </div>`;
                                 });
-
                                 animatorHtml += '</div>';
                             }
                             $('#eventModal .modal-animator').html(animatorHtml);
                             $('#eventModal .modal-location').text("Lieu : " + event.location);
-                            initMap(event.latitude, event.longitude);
+
+                            updateMapMarker(event.latitude, event.longitude);
+
                             $('#eventModal').modal('show');
                         }
                     });
@@ -265,6 +286,18 @@
                     console.error('Erreur lors du chargement des données', error);
                     loaderEl.style.display = 'none';
                 });
+        });
+
+        document.getElementById('eventModal').addEventListener('shown.bs.modal', function () {
+            if (map) {
+                map.dragging.enable();
+                map.zoomControl.enable();
+
+
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 100);
+            }
         });
     </script>
 @endsection

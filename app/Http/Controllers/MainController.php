@@ -31,11 +31,6 @@ class MainController extends Controller
         return view('auth.register');
     }
 
-    public function news(): View|Application|Factory
-    {
-        return view('news');
-    }
-
     public function planning(): Application|Factory|View
     {
         return view('planning');
