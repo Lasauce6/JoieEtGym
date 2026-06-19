@@ -2,12 +2,18 @@
 
 namespace App\Filament\Admin\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\AnimatorResource\Pages\ListAnimators;
+use App\Filament\Admin\Resources\AnimatorResource\Pages\CreateAnimator;
+use App\Filament\Admin\Resources\AnimatorResource\Pages\EditAnimator;
 use App\Filament\Admin\Resources\AnimatorResource\Pages;
 use App\Models\Animator;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -17,15 +23,15 @@ use Filament\Tables\Table;
 class AnimatorResource extends Resource
 {
     protected static ?string $model = Animator::class;
-    protected static ?string $navigationIcon = 'heroicon-o-user-plus';
-    protected static ?string $navigationGroup = 'Planning';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-user-plus';
+    protected static string | \UnitEnum | null $navigationGroup = 'Planning';
     protected static ?string $modelLabel = 'Animateur';
     protected static ?string $pluralModelLabel = 'Animateurs';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 FileUpload::make('photo')
                     ->label('Photo')
                     ->image()
@@ -54,12 +60,12 @@ class AnimatorResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -74,9 +80,9 @@ class AnimatorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAnimators::route('/'),
-            'create' => Pages\CreateAnimator::route('/create'),
-            'edit' => Pages\EditAnimator::route('/{record}/edit'),
+            'index' => ListAnimators::route('/'),
+            'create' => CreateAnimator::route('/create'),
+            'edit' => EditAnimator::route('/{record}/edit'),
         ];
     }
 }

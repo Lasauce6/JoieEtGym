@@ -2,6 +2,8 @@
 
 namespace App\Filament\Admin\Resources\CourseResource\Pages;
 
+use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
 use App\Filament\Admin\Resources\CourseResource;
 use App\Models\Course;
 use Exception;
@@ -76,11 +78,11 @@ class EditCourse extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->label('Supprimer')
                 ->modalHeading('Options de suppression')
                 ->modalDescription('Ce cours fait partie d\'une série. Que souhaitez-vous faire ?')
-                ->form([
+                ->schema([
                     Radio::make('delete_option')
                         ->label('Étendue de la suppression')
                         ->options([
@@ -127,7 +129,7 @@ class EditCourse extends EditRecord
                     $this->redirect($this->getResource()::getUrl('index'));
                 }),
 
-            Actions\Action::make('detach')
+            Action::make('detach')
                 ->label('Détacher de la série')
                 ->icon('heroicon-o-link-slash')
                 ->color('warning')

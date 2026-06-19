@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Pages\Dashboard;
+use Filament\Widgets\AccountWidget;
 use App\Filament\Pages\Auth\EditProfile;
 use Exception;
 use Filament\Http\Middleware\Authenticate;
@@ -40,7 +42,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->pages([
-                Pages\Dashboard::class,
+                Dashboard::class,
             ])
             ->plugin(FilamentFullCalendarPlugin::make()
                 ->selectable()
@@ -48,7 +50,7 @@ class AdminPanelProvider extends PanelProvider
                 ->timezone(config('app.timezone'))
                 ->locale(config('app.locale')))
             ->widgets([
-                Widgets\AccountWidget::class,
+                AccountWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources\CourseResource\Pages;
 
+use Filament\Actions\CreateAction;
 use App\Filament\Admin\Resources\CourseResource;
 use App\Filament\Admin\Widgets\CourseCalendarWidget;
 use Filament\Actions;
@@ -14,7 +15,7 @@ class ListCourses extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 
