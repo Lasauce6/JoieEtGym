@@ -2,19 +2,35 @@
 
 namespace App\Filament\Admin\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Grid;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
+use Filament\Schemas\Components\Actions;
+use Filament\Actions\Action;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\CourseResource\Pages\ListCourses;
+use App\Filament\Admin\Resources\CourseResource\Pages\CreateCourse;
+use App\Filament\Admin\Resources\CourseResource\Pages\EditCourse;
 use App\Filament\Admin\Resources\CourseResource\Pages;
 use App\Models\Course;
 use App\Services\Geocoder;
 use Exception;
 use Filament\Forms;
-use Filament\Forms\Components\Actions as FormActions;
-use Filament\Forms\Components\Actions\Action;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -23,44 +39,44 @@ use Filament\Tables\Table;
 class CourseResource extends Resource
 {
     protected static ?string $model = Course::class;
-    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
-    protected static ?string $navigationGroup = 'Planning';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-calendar-days';
+    protected static string | \UnitEnum | null $navigationGroup = 'Planning';
     protected static ?string $modelLabel = 'Cours';
     protected static ?string $pluralModelLabel = 'Cours';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Grid::make(3)
                     ->schema([
                         Grid::make(1)
                             ->schema([
-                                Forms\Components\TextInput::make('title')
+                                TextInput::make('title')
                                     ->label('Titre du cours')
                                     ->required()
                                     ->columnSpanFull(),
 
-                                Forms\Components\Textarea::make('description')
+                                Textarea::make('description')
                                     ->label('Description')
                                     ->rows(3)
                                     ->columnSpanFull(),
 
                                 Section::make('Planification')
                                     ->schema([
-                                        Forms\Components\DateTimePicker::make('start')
+                                        DateTimePicker::make('start')
                                             ->label('Début')
                                             ->required()
                                             ->seconds(false)
                                             ->live(),
 
-                                        Forms\Components\DateTimePicker::make('end')
+                                        DateTimePicker::make('end')
                                             ->label('Fin')
                                             ->required()
                                             ->seconds(false)
                                             ->after('start'),
 
-                                        Forms\Components\Select::make('color')
+                                        Select::make('color')
                                             ->label('Couleur')
                                             ->options([
                                                 '#F97316' => 'Orange',
@@ -78,7 +94,7 @@ class CourseResource extends Resource
 
                                 Section::make('Lieu & Géocodage')
                                     ->schema([
-                                        Forms\Components\TextInput::make('location')
+                                        TextInput::make('location')
                                             ->label('Adresse')
                                             ->placeholder('Ex: 10 Rue de la Paix, Paris')
                                             ->live(debounce: 1000)
@@ -94,7 +110,7 @@ class CourseResource extends Resource
                                                 }
                                             }),
 
-                                        FormActions::make([
+                                        Actions::make([
                                             Action::make('geocode_now')
                                                 ->label('Géocoder cette adresse')
                                                 ->action(function (Get $get, Set $set) {
@@ -113,12 +129,12 @@ class CourseResource extends Resource
 
                                         Grid::make()
                                             ->schema([
-                                                Forms\Components\TextInput::make('latitude')
+                                                TextInput::make('latitude')
                                                     ->label('Latitude')
                                                     ->numeric()
                                                     ->readOnly()
                                                     ->helperText('Rempli automatiquement'),
-                                                Forms\Components\TextInput::make('longitude')
+                                                TextInput::make('longitude')
                                                     ->label('Longitude')
                                                     ->numeric()
                                                     ->readOnly()
@@ -128,12 +144,12 @@ class CourseResource extends Resource
 
                                 Section::make('Récurrence')
                                     ->schema([
-                                        Forms\Components\Toggle::make('is_recurring')
+                                        Toggle::make('is_recurring')
                                             ->label('Cours récurrent')
                                             ->live()
                                             ->helperText('Activer pour générer une série de cours.'),
 
-                                        Forms\Components\Select::make('recurrence_type')
+                                        Select::make('recurrence_type')
                                             ->label('Type de récurrence')
                                             ->options([
                                                 'daily' => 'Tous les jours',
@@ -144,7 +160,7 @@ class CourseResource extends Resource
                                             ->live()
                                             ->visible(fn (Get $get) => $get('is_recurring')),
 
-                                        Forms\Components\CheckboxList::make('recurrence_days')
+                                        CheckboxList::make('recurrence_days')
                                             ->label('Jours de la semaine')
                                             ->options([
                                                 'monday' => 'Lundi',
@@ -158,14 +174,14 @@ class CourseResource extends Resource
                                             ->columns()
                                             ->visible(fn (Get $get) => $get('is_recurring') && $get('recurrence_type') === 'weekly'),
 
-                                        Forms\Components\DatePicker::make('recurrence_end')
+                                        DatePicker::make('recurrence_end')
                                             ->label('Date de fin de récurrence')
                                             ->visible(fn (Get $get) => $get('is_recurring')),
                                     ]),
 
                                 Section::make('Modification')
                                     ->schema([
-                                        Forms\Components\Radio::make('update_scope')
+                                        Radio::make('update_scope')
                                             ->label('Appliquer les modifications')
                                             ->options([
                                                 'this' => 'Uniquement à ce cours',
@@ -181,14 +197,14 @@ class CourseResource extends Resource
 
                         Section::make('Animateurs')
                             ->schema([
-                                Forms\Components\Select::make('animators')
+                                Select::make('animators')
                                     ->label('Animateurs assignés')
                                     ->relationship('animators', 'name')
                                     ->multiple()
                                     ->preload()
                                     ->createOptionForm([
-                                        Forms\Components\TextInput::make('name')->required(),
-                                        Forms\Components\FileUpload::make('photo')->image(),
+                                        TextInput::make('name')->required(),
+                                        FileUpload::make('photo')->image(),
                                     ])
                                     ->columnSpanFull(),
                             ])->columnSpan(1),
@@ -203,33 +219,33 @@ class CourseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('start')
+                TextColumn::make('start')
                     ->label('Date')
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('animators.name')
+                TextColumn::make('animators.name')
                     ->label('Animateurs')
                     ->badge()
                     ->limitList(2),
 
-                Tables\Columns\TextColumn::make('location')
+                TextColumn::make('location')
                     ->label('Lieu')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                Tables\Filters\Filter::make('upcoming')
+                Filter::make('upcoming')
                     ->label('Cours à venir')
                     ->query(fn ($query) => $query->where('start', '>=', now())),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
 
-                Tables\Actions\Action::make('delete')
+                Action::make('delete')
                     ->label('Supprimer')
                     ->icon('heroicon-o-trash')
                     ->color('danger')
@@ -241,7 +257,7 @@ class CourseResource extends Resource
                         }
                         return 'Êtes-vous sûr de vouloir supprimer ce cours ?';
                     })
-                    ->form([
+                    ->schema([
                         Radio::make('delete_option')
                             ->label('Étendue de la suppression')
                             ->options([
@@ -289,9 +305,9 @@ class CourseResource extends Resource
                             ->send();
                     }),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -306,9 +322,9 @@ class CourseResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCourses::route('/'),
-            'create' => Pages\CreateCourse::route('/create'),
-            'edit' => Pages\EditCourse::route('/{record}/edit'),
+            'index' => ListCourses::route('/'),
+            'create' => CreateCourse::route('/create'),
+            'edit' => EditCourse::route('/{record}/edit'),
         ];
     }
 }
