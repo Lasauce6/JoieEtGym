@@ -13,12 +13,18 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Spatie\Sitemap\SitemapGenerator;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use App\Models\Animator;
+use App\Models\Bureau;
+
 
 class MainController extends Controller
 {
     public function index(): View|Application|Factory
     {
-        return view('index');
+        $animators = Animator::with('courses')->get();
+        $bureaus = Bureau::all();
+
+        return view('index', ['animators' => $animators, 'bureaus' => $bureaus]);
     }
 
     public function inscription(): View|Application|Factory

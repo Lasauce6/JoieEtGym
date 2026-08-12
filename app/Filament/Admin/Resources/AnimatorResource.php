@@ -9,13 +9,11 @@ use Filament\Actions\DeleteBulkAction;
 use App\Filament\Admin\Resources\AnimatorResource\Pages\ListAnimators;
 use App\Filament\Admin\Resources\AnimatorResource\Pages\CreateAnimator;
 use App\Filament\Admin\Resources\AnimatorResource\Pages\EditAnimator;
-use App\Filament\Admin\Resources\AnimatorResource\Pages;
 use App\Models\Animator;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -27,6 +25,7 @@ class AnimatorResource extends Resource
     protected static string | \UnitEnum | null $navigationGroup = 'Planning';
     protected static ?string $modelLabel = 'Animateur';
     protected static ?string $pluralModelLabel = 'Animateurs';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {
