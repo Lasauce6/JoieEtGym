@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('title', 'Accueil')
-
+{{--
 @php
     $animateurs = [
         'Fabrice' => 'Danse-Move, Gym Entretien, <br>
@@ -32,7 +32,7 @@
         'Bernadette MANSOUR' => 'Membre',
         'Françoise MOGUET' => 'Membre',
     ];
-@endphp
+@endphp --}}
 
 @section('content')
     <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -179,11 +179,13 @@
         <div class="row">
             <!-- Animateurs -->
             <div class="col-12 d-flex flex-wrap justify-content-center">
-                @foreach($animateurs as $animateur => $description)
+                @foreach($animators as $animateur)
                     <div class="p-3 text-center">
-                        <img src="{{ asset('/assets/images/animateurs/'.$animateur.'.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur }}" width="150" height="150">
-                        <h5>{{ $animateur }}</h5>
-                        <p class="text-muted">{!! $description !!}</p>
+                        <img src="{{ $animateur->getPhotoUrlAttribute() }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur->name }}" width="150" height="150">
+                        <h5>{{ $animateur->name }}</h5>
+                        <p class="text-muted">
+                            {{ $animateur->courses->pluck('title')->unique()->implode(', ') }}
+                        </p>
                     </div>
 
                 @endforeach
@@ -193,11 +195,11 @@
         <h2 class="my-5 text-center">- Les Membres du Bureau</h2>
         <div class="row">
             <div class="col-12 d-flex flex-wrap justify-content-center">
-                @foreach($bureau as $membre => $role)
+                @foreach($bureaus as $membre)
                     <div class="p-3 text-center">
-                        <img src="{{ asset('/assets/images/placeholder_profile.png') }}" class="rounded-circle mb-2" alt="Photo de {{ $membre }}" width="150" height="150">
-                        <h5>{{ $membre }}</h5>
-                        <p class="text-muted">{{ $role }}</p>
+                        <img src="{{ $membre->getPhotoUrlAttribute() }}" class="rounded-circle mb-2" alt="Photo de {{ $membre->name }}" width="150" height="150">
+                        <h5>{{ $membre->name }}</h5>
+                        <p class="text-muted">{{ $membre->description }}</p>
                     </div>
                 @endforeach
             </div>

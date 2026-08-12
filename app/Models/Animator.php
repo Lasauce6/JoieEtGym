@@ -10,9 +10,9 @@ class Animator extends Model
 {
     protected $fillable = ['name', 'photo', 'bio'];
 
-    public function courses(): BelongsToMany
+    public function courses(): BelongsToMany|Course|Animator
     {
-        return $this->BelongsToMany(Course::class);
+        return $this->belongsToMany(Course::class, 'animator_course', 'animator_id', 'course_id');
     }
 
     public function getPhotoUrlAttribute(): string
@@ -20,7 +20,7 @@ class Animator extends Model
         $photo = $this->getAttribute('photo');
 
         if ($photo)
-            return Storage::disk('public')->url($photo);
+            return Storage::url($photo);
         return 'https://ui-avatars.com/api/?name=' . urlencode($this->getAttribute('name')) . '&color=3D3D3D&background=F0EFEB';
     }
 }

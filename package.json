@@ -18,5 +18,8 @@
     },
     "dependencies": {
         "tinymce": "^7.6.0"
+    },
+    "allowScripts": {
+        "fsevents@2.3.3": true
     }
 }
