@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Document;
+use App\Models\Image;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -29,17 +31,14 @@ class MainController extends Controller
 
     public function inscription(): View|Application|Factory
     {
-        return view('inscription');
+        $documents = Document::pluck('file_path', 'key');
+
+        return view('inscription', ['documents' => $documents]);
     }
 
     public function register(): View|Application|Factory
     {
         return view('auth.register');
-    }
-
-    public function news(): View|Application|Factory
-    {
-        return view('news');
     }
 
     public function planning(): Application|Factory|View
@@ -91,7 +90,9 @@ class MainController extends Controller
 
     public function tarifs(): View|Application|Factory
     {
-        return view('tarifs');
+        $images = Image::pluck('file_path', 'key');
+
+        return view('tarifs', ['images' => $images]);
     }
 
     public function login(): View|Factory|Application

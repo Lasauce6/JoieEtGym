@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Document;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Pagination\Paginator;
@@ -18,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
+
+        view()->composer('partials.footer', function ($view) {
+            $documents = Document::pluck('file_path', 'key');
+
+            $view->with('documents', $documents);
+        });
 
         Event::listen(
             Registered::class,
