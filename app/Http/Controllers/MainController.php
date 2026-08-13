@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Document;
+use App\Models\Image;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,27 +15,30 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Spatie\Sitemap\SitemapGenerator;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use App\Models\Animator;
+use App\Models\Bureau;
+
 
 class MainController extends Controller
 {
     public function index(): View|Application|Factory
     {
-        return view('index');
+        $animators = Animator::with('courses')->get();
+        $bureaus = Bureau::all();
+
+        return view('index', ['animators' => $animators, 'bureaus' => $bureaus]);
     }
 
     public function inscription(): View|Application|Factory
     {
-        return view('inscription');
+        $documents = Document::pluck('file_path', 'key');
+
+        return view('inscription', ['documents' => $documents]);
     }
 
     public function register(): View|Application|Factory
     {
         return view('auth.register');
-    }
-
-    public function news(): View|Application|Factory
-    {
-        return view('news');
     }
 
     public function planning(): Application|Factory|View
@@ -85,7 +90,9 @@ class MainController extends Controller
 
     public function tarifs(): View|Application|Factory
     {
-        return view('tarifs');
+        $images = Image::pluck('file_path', 'key');
+
+        return view('tarifs', ['images' => $images]);
     }
 
     public function login(): View|Factory|Application

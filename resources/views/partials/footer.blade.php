@@ -1,3 +1,8 @@
+@php
+    use App\Enums\DocumentType;
+    use Illuminate\Support\Facades\Storage;
+@endphp
+
 <!-- Footer -->
 <footer class="text-center border-top mt-5">
     <div class="container">
@@ -23,38 +28,63 @@
                 <div class="col">
                     <a href="{{ route('planning') }}">Le planning</a>
                 </div>
+                @if(isset($documents[DocumentType::AssuranceMaif->value]))
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/garanties-maif.pdf') }}">Assurance MAIF</a>
+                    <a href="{{ Storage::url($documents[DocumentType::AssuranceMaif->value]) }}">Assurance MAIF</a>
                 </div>
+                @else
+                <div class="col">
+                </div>
+                @endif
             </div>
             <div class="row">
                 <div class="col">
                     <a href="{{ route('inscription') }}">Nous rejoindre</a>
                 </div>
+                @if(isset($documents[DocumentType::AssuranceIaSports->value]))
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/SOUSCRIPTION-IA-SPORT.pdf') }}">Assurance complémentaire IA Sports</a>
+                    <a href="{{ Storage::url($documents[DocumentType::AssuranceIaSports->value]) }}">Assurance complémentaire IA Sports</a>
                 </div>
+                @else
+                <div class="col">
+                </div>
+                @endif
             </div>
             <div class="row">
                 <div class="col">
                 </div>
+                @if(isset($documents[DocumentType::CompteRenduAg->value]))
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/CR-AG-du-07dec2024.pdf') }}">Compte rendu AG</a>
+                    <a href="{{ Storage::url($documents[DocumentType::CompteRenduAg->value]) }}">Compte rendu AG</a>
                 </div>
+                @else
+                <div class="col">
+                </div>
+                @endif
             </div>
             <div class="row">
                 <div class="col">
                 </div>
+                @if(isset($documents[DocumentType::QstMajeurs->value]))
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/questionnaire-majeur.pdf') }}">Questionnaire de santé (Majeurs)</a>
+                    <a href="{{ Storage::url($documents[DocumentType::QstMajeurs->value]) }}">Questionnaire de santé (Majeurs)</a>
                 </div>
+                @else
+                <div class="col">
+                </div>
+                @endif
             </div>
             <div class="row">
                 <div class="col">
                 </div>
+                @if(isset($documents[DocumentType::QstMineurs->value]))
                 <div class="col">
-                    <a href="{{ asset('/assets/pdf/questionnaire-mineur.pdf') }}">Questionnaire de santé (Mineurs)</a>
+                    <a href="{{ Storage::url($documents[DocumentType::QstMineurs->value]) }}">Questionnaire de santé (Mineurs)</a>
                 </div>
+                @else
+                <div class="col">
+                </div>
+                @endif
             </div>
         </section>
 
