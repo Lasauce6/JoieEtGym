@@ -152,7 +152,7 @@
                         <img src="{{ $animateur->getPhotoUrlAttribute() }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur->name }}" width="150" height="150">
                         <h5>{{ $animateur->name }}</h5>
                         <p class="text-muted">
-                            {{ $animateur->description }}
+                            {!! nl2br(e($animateur->bio)) !!}
                         </p>
                     </div>
 
