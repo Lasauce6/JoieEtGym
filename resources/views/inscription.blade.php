@@ -15,10 +15,10 @@ use App\Enums\DocumentType;
                         <strong>Inscription</strong>
                     </h1>
                     <p class="mt-2 text-muted">
-                        A partir du 1er septembre {{ date('Y') }} <br> <br>
+                        A partir du 24 août {{ date('Y') }} <br> <br>
                         Les inscriptions peuvent se faire toute l'année et uniquement via le site Helloasso. <br>
                         Le lien sera activé à partir du 1er Septembre <br>
-                        <a href="https://www.helloasso.com/associations/joie-et-gymnastique-au-val-d-yerres/adhesions/bulletin-d-inscription-2025-2026-1" target="_blank">Lien pour s'inscrire</a>
+                        <a href="https://www.helloasso.com/associations/joie-et-gymnastique-au-val-d-yerres/adhesions/bulletin-d-inscription-2026-2027-1" target="_blank">Lien pour s'inscrire</a>
 
                         <br> <br>
                         Au moment de votre adhésion, vous devez lire attentivement le questionnaire de santé. <br>
