@@ -2,6 +2,10 @@
 
 @section('title', 'Tarifs')
 
+@php
+use App\Enums\ImageType;
+@endphp
+
 @section('content')
     <div class="container mt-5">
         <div class="position-relative mx-auto">
@@ -10,9 +14,11 @@
                     <h1 class="mb-4">
                         <strong>Tarifs</strong>
                     </h1>
-                    <div class="text-center">
-                        <img src="{{ asset('assets/pdf/TARIFS-2025-2026.png') }}" alt="tarifs-2025-2026" class="img-fluid">
-                    </div>
+                    @if(@isset($images[ImageType::Tarifs->value]))
+                        <div class="text-center">
+                            <img src="{{ Storage::url($images[ImageType::Tarifs->value]) }}" alt="tarifs" class="img-fluid">
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
