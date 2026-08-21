@@ -169,8 +169,16 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
     <script>
+        let eventMapInstance = null;
+
         window.initMap = function(latitude, longitude) {
             const mapDiv = document.getElementById('eventMap');
+
+            if (eventMapInstance) {
+                eventMapInstance.remove();
+                eventMapInstance = null;
+            }
+
             mapDiv.innerHTML = '';
 
             if (!latitude || !longitude || isNaN(parseFloat(latitude))) {
@@ -178,14 +186,19 @@
                 return;
             }
 
-            const map = L.map('eventMap').setView([parseFloat(latitude), parseFloat(longitude)], 15);
+            eventMapInstance = L.map('eventMap').setView([parseFloat(latitude), parseFloat(longitude)], 15);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                referrerPolicy: 'strict-origin-when-cross-origin'
+            }).addTo(eventMapInstance);
 
-            L.marker([parseFloat(latitude), parseFloat(longitude)]).addTo(map);
+            L.marker([parseFloat(latitude), parseFloat(longitude)]).addTo(eventMapInstance);
+
+            setTimeout(() => {
+                eventMapInstance.invalidateSize();
+            }, 100);
         };
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -254,8 +267,10 @@
                             }
                             $('#eventModal .modal-animator').html(animatorHtml);
                             $('#eventModal .modal-location').text("Lieu : " + event.location);
-                            initMap(event.latitude, event.longitude);
+
+                            // 4. On affiche le modal AVANT d'initialiser la carte
                             $('#eventModal').modal('show');
+                            initMap(event.latitude, event.longitude);
                         }
                     });
 
@@ -268,4 +283,3 @@
         });
     </script>
 @endsection
-
