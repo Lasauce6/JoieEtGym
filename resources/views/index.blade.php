@@ -1,38 +1,6 @@
 @extends('main')
 
 @section('title', 'Accueil')
-{{--
-@php
-    $animateurs = [
-        'Fabrice' => 'Danse-Move, Gym Entretien, <br>
-         Abdo-Fessiers Etirements',
-        'Isabelle' => 'LIA Aérobic, <br> Renfo spécial Jambes/Etirements',
-        'Joëlle' => 'Body Zen, Gym Entretien, <br>
-        Stretching Postural, <br> Equilibre et Coordination Séniors, <br>
-         Taille Abdo-Fessiers',
-        'Luckie' => 'Stretching Postural',
-        'Mary' => 'Yoga',
-        'Nathalie' => 'Souplesse Etirements, Body Zen, <br>
-         Gym Détente Méthodes Pilates',
-        'Rose Marie' => 'Gym Douce, Renfo Training',
-        'Vincent' => 'Gym Musculaire, Gym Tonic, <br>
-         Renforcement Musculaire',
-        'Claire' => 'Yoga Nidra',
-        'Animateur' => 'Aquagym Piscine des Sénart'
-    ];
-    $bureau = [
-        'Gabriele MAKKAOUI' => 'Présidente',
-        'Michèle FLAMEN' => 'Secrétaire',
-        'Michelle ROUSSEAU' => 'Secrétaire Adjointe',
-        'Claudine LE CHAUDELEC' => 'Trésorière',
-        'Gérard AUSSEIL' => 'Membre',
-        'Danièle CAMPION' => 'Membre',
-        'Marie-Bernadette CHORON' => 'Membre',
-        'Danielle COUVREUX' => 'Membre',
-        'Bernadette MANSOUR' => 'Membre',
-        'Françoise MOGUET' => 'Membre',
-    ];
-@endphp --}}
 
 @section('content')
     <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -184,7 +152,7 @@
                         <img src="{{ $animateur->getPhotoUrlAttribute() }}" class="rounded-circle mb-2" alt="Photo de {{ $animateur->name }}" width="150" height="150">
                         <h5>{{ $animateur->name }}</h5>
                         <p class="text-muted">
-                            {{ $animateur->courses->pluck('title')->unique()->implode(', ') }}
+                            {!! nl2br(e($animateur->bio)) !!}
                         </p>
                     </div>
 
