@@ -208,7 +208,7 @@
             const calendarEl = document.getElementById('calendar');
             const loaderEl = document.getElementById('loader');
 
-            fetch('/load-planning')
+            fetch('/planning.load')
                 .then(response => response.json())
                 .then(data => {
                     loaderEl.style.display = 'none';

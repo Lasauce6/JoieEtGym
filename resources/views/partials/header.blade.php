@@ -15,21 +15,35 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'text-secondary' : 'text-dark' }}" href="{{ route('index') }}">Accueil</a>
                     </li>
+                    @if(Cache::get('route_toggle_cours', true))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('courses') ? 'text-secondary' : 'text-dark' }}" href="{{ route('cours') }}">Les cours</a>
                     </li>
+                    @endif
+
+                    @if(Cache::get('route_toggle_tarifs', true))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('tarifs') ? 'text-secondary' : 'text-dark' }}" href="{{ route('tarifs') }}">Tarifs</a>
                     </li>
+                    @endif
+
+                    @if(Cache::get('route_toggle_news', true))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('news') ? 'text-secondary' : 'text-dark' }}" href="{{ route('news') }}">Actualités</a>
                     </li>
+                    @endif
+
+                    @if(Cache::get('route_toggle_planning', true))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('planning') ? 'text-secondary' : 'text-dark' }}" href="{{ route('planning') }}">Le planning</a>
                     </li>
+                    @endif
+
+                    @if(Cache::get('route_toggle_inscription', true))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('inscription') ? 'text-secondary' : 'text-dark' }}" href="{{ route('inscription') }}">Nous rejoindre</a>
                     </li>
+                    @endif
                 </ul>
                 <div id="header-right" class="d-flex justify-content-lg-end mt-3 mt-lg-0">
                     <ul class="navbar-nav">

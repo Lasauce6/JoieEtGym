@@ -13,6 +13,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Database\Eloquent\Model;
 
 class ImageResource extends Resource
 {
@@ -21,7 +23,7 @@ class ImageResource extends Resource
     protected static string | \UnitEnum | null $navigationGroup = 'Documents et liens';
     protected static ?string $modelLabel = 'Image';
     protected static ?string $pluralModelLabel = 'Images';
-    protected static ?string $recordTitleAttribute = 'Image';
+    protected static ?string $recordTitleAttribute = 'key';
     protected static ?int $navigationSort = 6;
 
     public static function form(Schema $schema): Schema
@@ -49,4 +51,9 @@ class ImageResource extends Resource
             'edit' => EditImage::route('/{record}/edit'),
         ];
     }
+
+    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+        {
+            return $record->key->getLabel();
+        }
 }

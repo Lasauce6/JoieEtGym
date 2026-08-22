@@ -17,8 +17,7 @@ class DocumentForm
                 ->label('Type de document')
                 ->options(collect(DocumentType::cases())->mapWithKeys(fn ($case) => [$case->value => $case->getLabel()]))
                 ->required()
-                ->unique(ignoreRecord: true)
-                ->searchable(),
+                ->unique(ignoreRecord: true),
             FileUpload::make('file_path')
                 ->label('Document PDF')
                 ->disk('public')

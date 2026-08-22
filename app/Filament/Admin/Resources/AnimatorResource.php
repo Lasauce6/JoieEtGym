@@ -25,6 +25,7 @@ class AnimatorResource extends Resource
     protected static string | \UnitEnum | null $navigationGroup = 'Planning';
     protected static ?string $modelLabel = 'Animateur';
     protected static ?string $pluralModelLabel = 'Animateurs';
+    protected static ?string $recordTitleAttribute = 'name';
     protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
