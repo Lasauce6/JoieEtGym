@@ -63,11 +63,13 @@
         </button>
     </div>
 
-    <div class="flash-info text-center py-2" style="background-color: #ffcc00; color: #333;">
-    <a href="{{ route('news.category', ['category' => 'flash-info']) }}" class="flash-link" style="text-decoration: none; color: inherit;">
-        <strong>Flash Info : Cliquez ici pour accéder aux flash infos</strong>
-    </a>
-</div>
+    @if(Cache::get('route_toggle_news', true))
+        <div class="flash-info text-center py-2" style="background-color: #ffcc00; color: #333;">
+            <a href="{{ route('news.category', ['category' => 'flash-info']) }}" class="flash-link" style="text-decoration: none; color: inherit;">
+                <strong>Flash Info : Cliquez ici pour accéder aux flash infos</strong>
+            </a>
+        </div>
+    @endif
 
     <div class="container">
         <h2 class="mt-5 text-center">Notre association :</h2>
@@ -119,9 +121,15 @@
                     Pour le plaisir de tous, c'est dans une ambiance chaleureuse et conviviale que nos animateurs diplômés dispensent aux adhérents
                     des cours variés et animés, correspondant aux attentes de chacun.
                 </p>
-                <p>
-                    <a href="{{ route('planning') }}">Consultez notre planning de la saison 2025-2026</a>
-                </p>
+                @if(Cache::get('route_toggle_planning', true))
+                    <p>
+                        @php
+                            $startYear = now()->month >= 8 ? now()->year : now()->year - 1;
+                            $schoolYear = $startYear . '-' . ($startYear + 1);
+                        @endphp
+                        <a href="{{ route('planning') }}">Consultez notre planning de la saison {{ $schoolYear }}</a>
+                    </p>
+                @endif
             </div>
         </div>
 

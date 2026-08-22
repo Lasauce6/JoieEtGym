@@ -17,19 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['throttle:global'])->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('index');
-    Route::get('/news', [PostController::class, 'getPosts'])->name("news");
-    Route::get('/news/{category}', [PostController::class, 'category'])->name('news.category');
-    Route::get('/news/{category}/{slug}', [PostController::class, 'post'])->name('news.post');
-    Route::get('/planning', [MainController::class, 'planning'])->name('planning');
-    Route::get('/courses', [MainController::class, 'cours'])->name('cours');
-    Route::get('/load-planning', [MainController::class, 'loadPlanning'])->name('loadPlanning');
-    Route::get('/inscription', [MainController::class, 'inscription'])->name('inscription');
+
+    Route::middleware(['route.toggle'])->group(function () {
+        Route::get('/tarifs', [MainController::class, 'tarifs'])->name('tarifs');
+        Route::get('/news', [PostController::class, 'getPosts'])->name("news");
+        Route::get('/news/{category}', [PostController::class, 'category'])->name('news.category');
+        Route::get('/news/{category}/{slug}', [PostController::class, 'post'])->name('news.post');
+        Route::get('/planning', [MainController::class, 'planning'])->name('planning');
+        Route::get('/planning.load', [MainController::class, 'loadPlanning'])->name('loadPlanning');
+        Route::get('/courses', [MainController::class, 'cours'])->name('cours');
+        Route::get('/inscription', [MainController::class, 'inscription'])->name('inscription');
+    });
     Route::get('/register', [MainController::class, 'register'])->name('register');
     Route::get('/login', [MainController::class, 'login'])->name('login');
     Route::view('/legals', 'legals')->name('legals');
     Route::view('/404', 'errors.404')->name('404');
     Route::get('/sitemap' , [MainController::class, 'sitemap'])->name('sitemap');
-    Route::get('/tarifs', [MainController::class, 'tarifs'])->name('tarifs');
 });
 
 Route::middleware(['throttle:login'])->group(function () {

@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
+            'route.toggle' => \App\Http\Middleware\CheckRouteStatus::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
