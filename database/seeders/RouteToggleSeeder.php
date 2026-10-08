@@ -12,7 +12,7 @@ class RouteToggleSeeder extends Seeder
      */
     public function run(): void
     {
-        $routes = ['news', 'planning', 'cours', 'inscriptions', 'tarifs'];
+        $routes = ['news', 'planning', 'cours', 'inscription', 'tarifs'];
 
         foreach ($routes as $route) {
             RouteToggle::firstOrCreate(

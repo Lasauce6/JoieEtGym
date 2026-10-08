@@ -19,11 +19,17 @@ use Illuminate\Database\Eloquent\Model;
 class DocumentResource extends Resource
 {
     protected static ?string $model = Document::class;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::DocumentArrowUp;
-    protected static string | \UnitEnum | null $navigationGroup = 'Documents et liens';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Documents et liens';
+
     protected static ?string $modelLabel = 'Document';
+
     protected static ?string $pluralModelLabel = 'Documents';
+
     protected static ?string $recordTitleAttribute = 'key';
+
     protected static ?int $navigationSort = 5;
 
     public static function form(Schema $schema): Schema
@@ -52,7 +58,12 @@ class DocumentResource extends Resource
         ];
     }
 
-    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+    public static function getRecordTitle(?Model $record): string|Htmlable|null
+    {
+        return $record?->key?->getLabel() ?? static::getModelLabel();
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string|Htmlable
     {
         return $record->key->getLabel();
     }
