@@ -19,11 +19,17 @@ use Illuminate\Database\Eloquent\Model;
 class ImageResource extends Resource
 {
     protected static ?string $model = Image::class;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Photo;
-    protected static string | \UnitEnum | null $navigationGroup = 'Documents et liens';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Documents et liens';
+
     protected static ?string $modelLabel = 'Image';
+
     protected static ?string $pluralModelLabel = 'Images';
+
     protected static ?string $recordTitleAttribute = 'key';
+
     protected static ?int $navigationSort = 6;
 
     public static function form(Schema $schema): Schema
@@ -52,8 +58,13 @@ class ImageResource extends Resource
         ];
     }
 
-    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
-        {
-            return $record->key->getLabel();
-        }
+    public static function getRecordTitle(?Model $record): string|Htmlable|null
+    {
+        return $record?->key?->getLabel() ?? static::getModelLabel();
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string|Htmlable
+    {
+        return $record->key->getLabel();
+    }
 }

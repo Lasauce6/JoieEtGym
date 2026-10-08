@@ -15,7 +15,10 @@ class RouteTogglesTable
             ->columns([
                 TextColumn::make('route_name')
                     ->label('Section')
-                    ->formatStateUsing(fn (string $state): string => ucfirst($state))
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'inscription' => 'Inscriptions',
+                        default => ucfirst($state),
+                    })
                     ->searchable(),
                 ToggleColumn::make('is_enabled')
                     ->label('Statut')
