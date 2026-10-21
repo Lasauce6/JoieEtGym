@@ -14,7 +14,7 @@
         "postcss": "^8.5.26",
         "postcss-nesting": "^14.0.0",
         "tailwindcss": "^4.3.1",
-        "vite": "^8.0.2"
+        "vite": "^8.3.4"
     },
     "dependencies": {
         "tinymce": "^7.6.0"
