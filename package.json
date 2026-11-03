@@ -17,7 +17,7 @@
         "vite": "^8.0.2"
     },
     "dependencies": {
-        "tinymce": "^7.6.0"
+        "tinymce": "^8.9.3"
     },
     "allowScripts": {
         "fsevents@2.3.3": true
